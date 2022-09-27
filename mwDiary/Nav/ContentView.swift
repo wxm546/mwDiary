@@ -10,8 +10,9 @@ import SwiftUI
 struct ContentView: View {
     
     @AppStorage("appTheme") var appTheme:String = "Automatic"
-//    @State var selectView:Tab = .setting
-    @AppStorage("selectView") var selectView:Tab = .setting
+    @State var selectTab:Tab = .diary
+    @State var selectView:Tab = .diary
+
     private func selectTheme(selectTheme:String?) -> ColorScheme?{
         if selectTheme == "Light" {
             return ColorScheme.light
@@ -21,7 +22,6 @@ struct ContentView: View {
             return nil
         }
     }
-    
     
     var body: some View {
         ZStack(alignment: .bottom){
@@ -37,20 +37,12 @@ struct ContentView: View {
                     SettingView()
                 }
             }
-//            .zIndex(0)
             .preferredColorScheme(selectTheme(selectTheme: appTheme))
             .frame(maxWidth: .infinity, maxHeight: .infinity)
-//            MyTabView(selectView: $selectView).zIndex(1)
-            MyTabView()
-//                .zIndex(1)
+            MyTabView(selectTab: $selectTab,selectView: $selectView)
         }
     }
 }
-
-
-
-
-
 
 
 

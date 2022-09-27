@@ -31,6 +31,9 @@ struct FavView: View {
         }
     }
     
+    //MARK: - lottie
+    @State var isShowAnime = false
+    
     
     var body: some View {
         ZStack{
@@ -54,7 +57,12 @@ struct FavView: View {
             
             //MARK: - toolBar
             Button {
-
+                isShowAnime = true
+                DispatchQueue.main.asyncAfter(deadline: .now() + 3,execute: {
+                    withAnimation (.easeInOut(duration: 0.2)){
+                        isShowAnime = false
+                    }
+                })
             } label: {
                 VStack{
                     Image(systemName: "heart.fill").font(filteredDiary==[] ? .title:.headline)
@@ -64,6 +72,12 @@ struct FavView: View {
             .frame(maxWidth:.infinity,maxHeight: .infinity,alignment:filteredDiary==[] ? .center : .topTrailing)
             .padding(.trailing,10)
             .tint(.primary)
+            //MARK: - Lottie
+            if isShowAnime {
+                MyLottieVIew(animationName: "heart1", isPlaying: $isShowAnime)
+                    .frame(width: 100,height: 100)
+            }
+            
             
             //MARK: - 弹窗
             if isShowFavToastAlert {

@@ -20,16 +20,22 @@ struct DiaryListView: View {
     @Binding var selectEntity:DiaryEntity?
     @Binding var isShowFavToastAlert:Bool
     @Binding var isShowDeleteToastAlert:Bool
-//    @State private var timer: Timer?
+    //    @State private var timer: Timer?
     
     var filteredDiary : [DiaryEntity]
     
     var body: some View{
         
         //        ScrollView{
+        //        GeometryReader{ geo in
         List{
+            //                Text("\(geo.size.height)-\(geo.size.width)-\(geo.safeAreaInsets.top)")
+            //                Text("\(geo.frame)-\(geo.safeAreaInsets.bottom)")
             ForEach(filteredDiary) { entity in
+                
                 DiaryCardView(diary: entity)
+                //                        Text("\(geo2.size.height)")
+                
                 //MARK: - 设置边距
                     .padding(.vertical,10)
                     .padding(.horizontal,18)
@@ -81,7 +87,7 @@ struct DiaryListView: View {
                             editText = entity.body ?? ""
                         } label: {
                             Image(systemName: "square.and.pencil").font(.title)
-
+                            
                         }
                         .tint(Color(.systemBlue))})
                 
@@ -100,7 +106,7 @@ struct DiaryListView: View {
         //            .onSubmit(of: .search) { print("hello") }
         .listStyle(.plain)
         .preference(key: IsSearchingPreferenceKey.self, value: isSearching)
-//        .scrollIndicators(.automatic)
+        //        .scrollIndicators(.automatic)
         .safeAreaInset(edge: .bottom, content: {Color.clear.frame(height: 50)})
         .navigationBarTitleDisplayMode(smallTitle ? .inline:.large)
         //MARK: - 删除提醒
@@ -121,44 +127,11 @@ struct DiaryListView: View {
         .sheet(isPresented: $showEditView,onDismiss: { selectEntity = nil }, content: {
             DiaryEditView(editTitle: $editTitle, editText: $editText, showEditView: $showEditView, selectEntity: $selectEntity)
         }).tint(.primary)
+        //        }
+        //geo
+        
         
     }
 }
 
 
-
-//public struct EmojiRefreshView: View {
-//    @Binding var state: RefresherState
-//    @State private var angle: Double = 0.0
-//    @State private var isAnimating = false
-//
-//    var foreverAnimation: Animation {
-//        Animation.linear(duration: 1.0)
-//            .repeatForever(autoreverses: false)
-//    }
-//
-//    public var body: some View {
-//        VStack {
-//            state.config
-//            switch state.mode {
-//            case .notRefreshing:
-//                Text("🤪")
-//                    .onAppear {
-//                        isAnimating = false
-//                    }
-//            case .pulling:
-//                Text("😯")
-//                    .rotationEffect(.degrees(360 * state.dragPosition))
-//            case .refreshing:
-//                Text("😂")
-//                    .rotationEffect(.degrees(self.isAnimating ? 360.0 : 0.0))
-//                        .onAppear {
-//                            withAnimation(foreverAnimation) {
-//                                isAnimating = true
-//                            }
-//                    }
-//            }
-//        }
-//        .scaleEffect(2)
-//    }
-//}

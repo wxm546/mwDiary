@@ -8,13 +8,7 @@
 import SwiftUI
 
 
-struct Theme:Identifiable {
-    var id = UUID()
-    var name : String
-    var icon : String
-    
-    
-}
+
 struct AppearanceListCell: View {
     var title:String = "title"
     var description:String = "Description"
@@ -33,6 +27,7 @@ struct AppearanceView: View {
     @EnvironmentObject var diaryvm:DiaryViewMode
     @AppStorage("smallTitle") var smallTitle:Bool = false
     @AppStorage("appTheme") var appTheme:String = "Automatic"
+    @AppStorage("heartColor") var heartColor:String = "yellow"
 
     private let icons:[AppIcon] = [
         AppIcon(iconName: nil, logoName: "icon 1"),
@@ -42,13 +37,13 @@ struct AppearanceView: View {
         AppIcon(iconName: "AppIcon 5", logoName: "icon 5"),
     ]
     
-    private let themes:[Theme] = [
-        Theme(name: "Automatic", icon: "sparkles"),
-        Theme(name: "Light", icon: "sun.max"),
-        Theme(name: "Dark", icon: "moon")
+    private let themes:[Themetest] = [
+        Themetest(name: "Automatic", icon: "sparkles"),
+        Themetest(name: "Light", icon: "sun.max"),
+        Themetest(name: "Dark", icon: "moon")
     ]
     
-    
+    private let heartColors:[UIColor] = [.systemYellow,.systemRed,.systemBlue]
     
     var body: some View {
         NavigationView {
@@ -103,10 +98,30 @@ struct AppearanceView: View {
                         }
                     }
                 }
+                //MARK: - change favcolor
+                Section("Heart Color"){
+                    ScrollView(.horizontal){
+                        HStack{
+                            ForEach(heartColors,id:\.self){ color in
+                                Button {
+                                
+                                } label: {
+                                    Image(systemName: "heart")
+                                        .font(.title)
+                                        .foregroundColor(Color(color))
+                                        .symbolVariant(.fill)
+                                        .frame(width: 44, height: 44)
+                                        .cornerRadius(20)
+                                        .padding()
+                                }
+                            }
+                        }
+                    }
+                }
                 
                 //TODO: - change LAYOUT
                 Section("LAYOUT"){
-                    VStack{
+                    VStack(spacing:18){
                         DiaryCardLayOutView()
                         DiaryCardLayOutView()
                         DiaryCardLayOutView()

@@ -68,3 +68,23 @@ var dateFormatteryyyyMMMM:DateFormatter {
     formatter.dateFormat = "yyyyMMMM"
     return formatter
 }
+
+var dateFormatterHHmmss:DateFormatter {
+    let formatter = DateFormatter()
+    formatter.dateFormat = "HH:mm:ss"
+    return formatter
+}
+var dateFormatteryyyyMMdd:DateFormatter {
+    let formatter = DateFormatter()
+    formatter.dateFormat = "yyyy-MM-dd"
+    return formatter
+}
+
+
+
+
+var exportDateFormatteryyyyMMddHHmmss:DateFormatter {
+    let formatter = DateFormatter()
+    formatter.dateFormat = "yyyyMMdd HHmmss"
+    return formatter
+}

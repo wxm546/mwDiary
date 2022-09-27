@@ -31,8 +31,6 @@ struct SettingView: View {
                         } label: {
                             Label("Export Data", systemImage: "doc")
                         }
-
-                        
                         
                         Toggle(isOn: $isICloud) {
                             Label("iCloud Sync", systemImage: "icloud")

@@ -31,20 +31,20 @@ struct DiaryView: View {
     }
     
     
-    
     //MARK: - ViewBody
     var body: some View {
-        
         ZStack{
             NavigationView{
-                DiaryListView(editTitle: $editTitle,
-                              editText: $editText,
-                              showEditView: $showEditView,
-                              showDeleteAlert: $showDeleteAlert,
-                              selectEntity: $selectEntity,
-                              isShowFavToastAlert: $isShowFavToastAlert,
-                              isShowDeleteToastAlert: $isShowDeleteToastAlert,
-                              filteredDiary: filteredDiary)
+                    DiaryListView(editTitle: $editTitle,
+                                  editText: $editText,
+                                  showEditView: $showEditView,
+                                  showDeleteAlert: $showDeleteAlert,
+                                  selectEntity: $selectEntity,
+                                  isShowFavToastAlert: $isShowFavToastAlert,
+                                  isShowDeleteToastAlert: $isShowDeleteToastAlert,
+                                  filteredDiary: filteredDiary)
+                    //                        .border(.blue)
+                    
                     .navigationTitle(navTitle)
                     //MARK: - 下拉编辑
                     .refreshable {
@@ -52,11 +52,9 @@ struct DiaryView: View {
                         editText = ""
                         showEditView.toggle()
                     }
-                    
             }//Nav
+            //                .border(.red)
             .navigationViewStyle(StackNavigationViewStyle())
-            
-            
             //MARK: - toolBar
             Button {
                 //TODO: - 储存默认值
@@ -70,7 +68,10 @@ struct DiaryView: View {
             .frame(maxWidth:.infinity,maxHeight: .infinity,alignment:filteredDiary==[] ? .center : .topTrailing)
             .padding(.trailing,10)
             .tint(.primary)
-
+            
+//            Text(dissssss ?? false ? "true" : "false")
+//            Text("\(listrowheight)")
+//                .offset(x:100)
             //MARK: - 弹窗
             if isShowFavToastAlert {
                 if selectEntity?.is_fav == true {
@@ -90,7 +91,6 @@ struct DiaryView: View {
     }
     //View
 }
-
 
 
 

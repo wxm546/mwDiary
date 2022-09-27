@@ -15,7 +15,7 @@
 		C453B0D428E285230042B671 /* write.json in Resources */ = {isa = PBXBuildFile; fileRef = C453B0B328E285220042B671 /* write.json */; };
 		C453B0D528E285230042B671 /* hi.json in Resources */ = {isa = PBXBuildFile; fileRef = C453B0B428E285220042B671 /* hi.json */; };
 		C453B0D628E285230042B671 /* Store.swift in Sources */ = {isa = PBXBuildFile; fileRef = C453B0B528E285220042B671 /* Store.swift */; };
-		C453B0D728E285230042B671 /* MyTextFieldwithUIKIT.swift in Sources */ = {isa = PBXBuildFile; fileRef = C453B0B728E285220042B671 /* MyTextFieldwithUIKIT.swift */; };
+		C453B0D728E285230042B671 /* MyTextFieldWithUIKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = C453B0B728E285220042B671 /* MyTextFieldWithUIKit.swift */; };
 		C453B0D828E285230042B671 /* DiaryCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C453B0B828E285220042B671 /* DiaryCardView.swift */; };
 		C453B0D928E285230042B671 /* DiaryListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C453B0B928E285220042B671 /* DiaryListView.swift */; };
 		C453B0DA28E285230042B671 /* ToastAlertView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C453B0BA28E285220042B671 /* ToastAlertView.swift */; };
@@ -39,6 +39,16 @@
 		C453B0EC28E285230042B671 /* FavView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C453B0D128E285230042B671 /* FavView.swift */; };
 		C453B0ED28E285230042B671 /* SettingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C453B0D228E285230042B671 /* SettingView.swift */; };
 		C4D50A9728E29AE6003BE66B /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = C4D50A9628E29AE6003BE66B /* README.md */; };
+		C4D8DDD028E344B900436B70 /* heart3.json in Resources */ = {isa = PBXBuildFile; fileRef = C4D8DDCC28E344B800436B70 /* heart3.json */; };
+		C4D8DDD128E344B900436B70 /* heart4.json in Resources */ = {isa = PBXBuildFile; fileRef = C4D8DDCD28E344B800436B70 /* heart4.json */; };
+		C4D8DDD228E344B900436B70 /* heart2.json in Resources */ = {isa = PBXBuildFile; fileRef = C4D8DDCE28E344B900436B70 /* heart2.json */; };
+		C4D8DDD328E344B900436B70 /* heart5.json in Resources */ = {isa = PBXBuildFile; fileRef = C4D8DDCF28E344B900436B70 /* heart5.json */; };
+		C4E54C0F28E2E41600C1B9CA /* BlankButtonStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4E54C0E28E2E41600C1B9CA /* BlankButtonStyle.swift */; };
+		C4E54C1228E2E4C300C1B9CA /* Themes.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4E54C1128E2E4C300C1B9CA /* Themes.swift */; };
+		C4E54C1428E317AD00C1B9CA /* MyLottieVIew.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4E54C1328E317AD00C1B9CA /* MyLottieVIew.swift */; };
+		C4E54C1728E3191000C1B9CA /* Lottie in Frameworks */ = {isa = PBXBuildFile; productRef = C4E54C1628E3191000C1B9CA /* Lottie */; };
+		C4E54C1928E3194A00C1B9CA /* testView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4E54C1828E3194A00C1B9CA /* testView.swift */; };
+		C4E54C1B28E3225D00C1B9CA /* heart1.json in Resources */ = {isa = PBXBuildFile; fileRef = C4E54C1A28E3225D00C1B9CA /* heart1.json */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -52,7 +62,7 @@
 		C453B0B328E285220042B671 /* write.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = write.json; sourceTree = "<group>"; };
 		C453B0B428E285220042B671 /* hi.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = hi.json; sourceTree = "<group>"; };
 		C453B0B528E285220042B671 /* Store.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Store.swift; sourceTree = "<group>"; };
-		C453B0B728E285220042B671 /* MyTextFieldwithUIKIT.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyTextFieldwithUIKIT.swift; sourceTree = "<group>"; };
+		C453B0B728E285220042B671 /* MyTextFieldWithUIKit.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyTextFieldWithUIKit.swift; sourceTree = "<group>"; };
 		C453B0B828E285220042B671 /* DiaryCardView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DiaryCardView.swift; sourceTree = "<group>"; };
 		C453B0B928E285220042B671 /* DiaryListView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DiaryListView.swift; sourceTree = "<group>"; };
 		C453B0BA28E285220042B671 /* ToastAlertView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ToastAlertView.swift; sourceTree = "<group>"; };
@@ -75,7 +85,17 @@
 		C453B0D028E285230042B671 /* JournalView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JournalView.swift; sourceTree = "<group>"; };
 		C453B0D128E285230042B671 /* FavView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FavView.swift; sourceTree = "<group>"; };
 		C453B0D228E285230042B671 /* SettingView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingView.swift; sourceTree = "<group>"; };
+		C471F71428E3358E00E6D9D7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		C4D50A9628E29AE6003BE66B /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		C4D8DDCC28E344B800436B70 /* heart3.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = heart3.json; sourceTree = "<group>"; };
+		C4D8DDCD28E344B800436B70 /* heart4.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = heart4.json; sourceTree = "<group>"; };
+		C4D8DDCE28E344B900436B70 /* heart2.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = heart2.json; sourceTree = "<group>"; };
+		C4D8DDCF28E344B900436B70 /* heart5.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = heart5.json; sourceTree = "<group>"; };
+		C4E54C0E28E2E41600C1B9CA /* BlankButtonStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlankButtonStyle.swift; sourceTree = "<group>"; };
+		C4E54C1128E2E4C300C1B9CA /* Themes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Themes.swift; sourceTree = "<group>"; };
+		C4E54C1328E317AD00C1B9CA /* MyLottieVIew.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyLottieVIew.swift; sourceTree = "<group>"; };
+		C4E54C1828E3194A00C1B9CA /* testView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = testView.swift; sourceTree = "<group>"; };
+		C4E54C1A28E3225D00C1B9CA /* heart1.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = heart1.json; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -83,6 +103,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C4E54C1728E3191000C1B9CA /* Lottie in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -109,6 +130,7 @@
 		C453B07F28E284A50042B671 /* mwDiary */ = {
 			isa = PBXGroup;
 			children = (
+				C471F71428E3358E00E6D9D7 /* Info.plist */,
 				C453B08428E284A50042B671 /* mwDiary.xcdatamodeld */,
 				C453B08B28E284A80042B671 /* mwDiary.entitlements */,
 				C453B08928E284A80042B671 /* Assets.xcassets */,
@@ -145,6 +167,11 @@
 		C453B0B228E285220042B671 /* lottie */ = {
 			isa = PBXGroup;
 			children = (
+				C4D8DDCE28E344B900436B70 /* heart2.json */,
+				C4D8DDCC28E344B800436B70 /* heart3.json */,
+				C4D8DDCD28E344B800436B70 /* heart4.json */,
+				C4D8DDCF28E344B900436B70 /* heart5.json */,
+				C4E54C1A28E3225D00C1B9CA /* heart1.json */,
 				C453B0B328E285220042B671 /* write.json */,
 				C453B0B428E285220042B671 /* hi.json */,
 			);
@@ -155,11 +182,11 @@
 			isa = PBXGroup;
 			children = (
 				C453B0B828E285220042B671 /* DiaryCardView.swift */,
+				C453B0BC28E285220042B671 /* DiaryCardLayOutView.swift */,
 				C453B0B928E285220042B671 /* DiaryListView.swift */,
 				C453B0BA28E285220042B671 /* ToastAlertView.swift */,
 				C453B0BB28E285220042B671 /* MyDatePicker.swift */,
-				C453B0BC28E285220042B671 /* DiaryCardLayOutView.swift */,
-				C453B0B728E285220042B671 /* MyTextFieldwithUIKIT.swift */,
+				C453B0B728E285220042B671 /* MyTextFieldWithUIKit.swift */,
 				C453B0BD28E285220042B671 /* DiaryEditView.swift */,
 			);
 			path = Components;
@@ -171,6 +198,7 @@
 				C453B0BF28E285220042B671 /* AppIcon.swift */,
 				C453B0C028E285220042B671 /* PreferenceKey.swift */,
 				C453B0C128E285220042B671 /* Tab.swift */,
+				C4E54C1128E2E4C300C1B9CA /* Themes.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -178,11 +206,13 @@
 		C453B0C228E285230042B671 /* Extension */ = {
 			isa = PBXGroup;
 			children = (
-				C453B0C328E285230042B671 /* MyDefaultValue.swift */,
-				C453B0C428E285230042B671 /* Color+.swift */,
-				C453B0C528E285230042B671 /* MyFormatter.swift */,
-				C453B0C628E285230042B671 /* UIPickerView+.swift */,
+				C4E54C1328E317AD00C1B9CA /* MyLottieVIew.swift */,
+				C4E54C1028E2E41F00C1B9CA /* Style */,
 				C453B0C728E285230042B671 /* Date+.swift */,
+				C453B0C428E285230042B671 /* Color+.swift */,
+				C453B0C628E285230042B671 /* UIPickerView+.swift */,
+				C453B0C528E285230042B671 /* MyFormatter.swift */,
+				C453B0C328E285230042B671 /* MyDefaultValue.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -200,6 +230,7 @@
 			children = (
 				C453B0CC28E285230042B671 /* ContentView.swift */,
 				C453B0CB28E285230042B671 /* MyTabView.swift */,
+				C4E54C1828E3194A00C1B9CA /* testView.swift */,
 			);
 			path = Nav;
 			sourceTree = "<group>";
@@ -215,6 +246,14 @@
 				C453B0B628E285220042B671 /* Components */,
 			);
 			path = View;
+			sourceTree = "<group>";
+		};
+		C4E54C1028E2E41F00C1B9CA /* Style */ = {
+			isa = PBXGroup;
+			children = (
+				C4E54C0E28E2E41600C1B9CA /* BlankButtonStyle.swift */,
+			);
+			path = Style;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -233,6 +272,9 @@
 			dependencies = (
 			);
 			name = mwDiary;
+			packageProductDependencies = (
+				C4E54C1628E3191000C1B9CA /* Lottie */,
+			);
 			productName = mwDiary;
 			productReference = C453B07D28E284A50042B671 /* mwDiary.app */;
 			productType = "com.apple.product-type.application";
@@ -261,6 +303,9 @@
 				Base,
 			);
 			mainGroup = C453B07428E284A50042B671;
+			packageReferences = (
+				C4E54C1528E3191000C1B9CA /* XCRemoteSwiftPackageReference "lottie-ios" */,
+			);
 			productRefGroup = C453B07E28E284A50042B671 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -276,11 +321,16 @@
 			buildActionMask = 2147483647;
 			files = (
 				C4D50A9728E29AE6003BE66B /* README.md in Resources */,
+				C4D8DDD328E344B900436B70 /* heart5.json in Resources */,
 				C453B08E28E284A80042B671 /* Preview Assets.xcassets in Resources */,
+				C4D8DDD028E344B900436B70 /* heart3.json in Resources */,
+				C4D8DDD128E344B900436B70 /* heart4.json in Resources */,
 				C453B0D428E285230042B671 /* write.json in Resources */,
 				C453B0D328E285230042B671 /* mmDiaryStore.storekit in Resources */,
+				C4E54C1B28E3225D00C1B9CA /* heart1.json in Resources */,
 				C453B0D528E285230042B671 /* hi.json in Resources */,
 				C453B08A28E284A80042B671 /* Assets.xcassets in Resources */,
+				C4D8DDD228E344B900436B70 /* heart2.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -291,13 +341,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C453B0D728E285230042B671 /* MyTextFieldwithUIKIT.swift in Sources */,
+				C4E54C1428E317AD00C1B9CA /* MyLottieVIew.swift in Sources */,
+				C453B0D728E285230042B671 /* MyTextFieldWithUIKit.swift in Sources */,
 				C453B0D628E285230042B671 /* Store.swift in Sources */,
 				C453B0D828E285230042B671 /* DiaryCardView.swift in Sources */,
 				C453B0E228E285230042B671 /* Color+.swift in Sources */,
 				C453B0E428E285230042B671 /* UIPickerView+.swift in Sources */,
 				C453B0EA28E285230042B671 /* DiaryView.swift in Sources */,
 				C453B0EC28E285230042B671 /* FavView.swift in Sources */,
+				C4E54C0F28E2E41600C1B9CA /* BlankButtonStyle.swift in Sources */,
 				C453B08628E284A50042B671 /* mwDiary.xcdatamodeld in Sources */,
 				C453B0DA28E285230042B671 /* ToastAlertView.swift in Sources */,
 				C453B0E528E285230042B671 /* Date+.swift in Sources */,
@@ -311,9 +363,11 @@
 				C453B0E328E285230042B671 /* MyFormatter.swift in Sources */,
 				C453B0D928E285230042B671 /* DiaryListView.swift in Sources */,
 				C453B0DD28E285230042B671 /* DiaryEditView.swift in Sources */,
+				C4E54C1228E2E4C300C1B9CA /* Themes.swift in Sources */,
 				C453B0E828E285230042B671 /* ContentView.swift in Sources */,
 				C453B0EB28E285230042B671 /* JournalView.swift in Sources */,
 				C453B0DF28E285230042B671 /* PreferenceKey.swift in Sources */,
+				C4E54C1928E3194A00C1B9CA /* testView.swift in Sources */,
 				C453B0DC28E285230042B671 /* DiaryCardLayOutView.swift in Sources */,
 				C453B0E028E285230042B671 /* Tab.swift in Sources */,
 				C453B0DB28E285230042B671 /* MyDatePicker.swift in Sources */,
@@ -441,11 +495,12 @@
 				CODE_SIGN_ENTITLEMENTS = mwDiary/mwDiary.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_ASSET_PATHS = "\"mwDiary/Preview Content\"";
+				DEVELOPMENT_ASSET_PATHS = "mwDiary/Resources/Preview\\ Content";
 				DEVELOPMENT_TEAM = DSHX4V92NH;
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = mwDiary/Info.plist;
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.utilities";
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphoneos*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphonesimulator*]" = YES;
@@ -453,6 +508,7 @@
 				"INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents[sdk=iphonesimulator*]" = YES;
 				"INFOPLIST_KEY_UILaunchScreen_Generation[sdk=iphoneos*]" = YES;
 				"INFOPLIST_KEY_UILaunchScreen_Generation[sdk=iphonesimulator*]" = YES;
+				INFOPLIST_KEY_UIStatusBarStyle = "";
 				"INFOPLIST_KEY_UIStatusBarStyle[sdk=iphoneos*]" = UIStatusBarStyleDefault;
 				"INFOPLIST_KEY_UIStatusBarStyle[sdk=iphonesimulator*]" = UIStatusBarStyleDefault;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
@@ -460,12 +516,11 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = "@executable_path/Frameworks";
 				"LD_RUNPATH_SEARCH_PATHS[sdk=macosx*]" = "@executable_path/../Frameworks";
-				MACOSX_DEPLOYMENT_TARGET = 12.3;
-				MARKETING_VERSION = 1.0;
+				MARKETING_VERSION = 0.8;
 				PRODUCT_BUNDLE_IDENTIFIER = wxm.mwDiary;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SDKROOT = auto;
-				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SDKROOT = iphoneos;
+				SUPPORTED_PLATFORMS = "iphonesimulator iphoneos";
 				SUPPORTS_MACCATALYST = NO;
 				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
@@ -483,11 +538,12 @@
 				CODE_SIGN_ENTITLEMENTS = mwDiary/mwDiary.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_ASSET_PATHS = "\"mwDiary/Preview Content\"";
+				DEVELOPMENT_ASSET_PATHS = "mwDiary/Resources/Preview\\ Content";
 				DEVELOPMENT_TEAM = DSHX4V92NH;
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = mwDiary/Info.plist;
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.utilities";
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphoneos*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphonesimulator*]" = YES;
@@ -495,6 +551,7 @@
 				"INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents[sdk=iphonesimulator*]" = YES;
 				"INFOPLIST_KEY_UILaunchScreen_Generation[sdk=iphoneos*]" = YES;
 				"INFOPLIST_KEY_UILaunchScreen_Generation[sdk=iphonesimulator*]" = YES;
+				INFOPLIST_KEY_UIStatusBarStyle = "";
 				"INFOPLIST_KEY_UIStatusBarStyle[sdk=iphoneos*]" = UIStatusBarStyleDefault;
 				"INFOPLIST_KEY_UIStatusBarStyle[sdk=iphonesimulator*]" = UIStatusBarStyleDefault;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
@@ -502,12 +559,11 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = "@executable_path/Frameworks";
 				"LD_RUNPATH_SEARCH_PATHS[sdk=macosx*]" = "@executable_path/../Frameworks";
-				MACOSX_DEPLOYMENT_TARGET = 12.3;
-				MARKETING_VERSION = 1.0;
+				MARKETING_VERSION = 0.8;
 				PRODUCT_BUNDLE_IDENTIFIER = wxm.mwDiary;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SDKROOT = auto;
-				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SDKROOT = iphoneos;
+				SUPPORTED_PLATFORMS = "iphonesimulator iphoneos";
 				SUPPORTS_MACCATALYST = NO;
 				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
@@ -538,6 +594,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		C4E54C1528E3191000C1B9CA /* XCRemoteSwiftPackageReference "lottie-ios" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/airbnb/lottie-ios.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 3.0.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		C4E54C1628E3191000C1B9CA /* Lottie */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = C4E54C1528E3191000C1B9CA /* XCRemoteSwiftPackageReference "lottie-ios" */;
+			productName = Lottie;
+		};
+/* End XCSwiftPackageProductDependency section */
 
 /* Begin XCVersionGroup section */
 		C453B08428E284A50042B671 /* mwDiary.xcdatamodeld */ = {

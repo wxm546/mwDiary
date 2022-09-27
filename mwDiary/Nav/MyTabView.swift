@@ -12,22 +12,19 @@ import SwiftUI
 // MARK: - MyTabView
 struct MyTabView: View {
     
-//    @AppStorage("selectTab") var selectTab:Tab = .diary
-//    @State var selectTab2:Tab = .diary
-//    @AppStorage("selectView") var selectView:Tab = .diary
+    @Binding var selectTab:Tab
+    @Binding var selectView:Tab
     
-//    @Binding var selectView:Tab
-    @AppStorage("selectView") var selectView:Tab = .setting
-    @State var a:CGFloat = 0
     var body: some View {
         HStack(spacing: 0){
             Spacer()
             ForEach(tabItems){ item in
-                
                 Button (action: {
-//                    withAnimation (.easeInOut(duration: 0.21)){
-                        selectView = item.tab
-//                    }
+                    withAnimation (.easeInOut(duration: 0.21)){
+                        selectTab = item.tab
+                    }
+                    selectView = item.tab
+                    
 //                    selectTab = item.tab
                 } , label: {
                     HStack(spacing:8){
@@ -36,7 +33,7 @@ struct MyTabView: View {
                             .symbolVariant(.circle.fill)
                             .font(.title3)
                             .frame(width: 45,height: 25,alignment:.trailing)
-                        if selectView == item.tab{
+                        if selectTab == item.tab{
                             Text(item.name)
                                 .font(.footnote)
                                 .lineLimit(1)
@@ -46,18 +43,18 @@ struct MyTabView: View {
                     //                    .frame(maxWidth:.infinity,alignment:.leading)
                     .padding(.trailing,25)
                     .background(content: {
-                        Capsule().fill(Color(selectView == item.tab ? .gray : .systemBackground).opacity(0.3))
+                        Capsule().fill(Color(selectTab == item.tab ? .gray : .systemBackground).opacity(0.3))
                             .frame(height: 40)
                     })
                 })
                 
                 
-                .buttonStyle(MyTabButtonStyle())
+                .buttonStyle(BlankButtonStyle())
                 //button
                 //      .padding(.top,14)
                 //button在Hstack中位置
                 .frame(height: 68,alignment: .top)
-                .foregroundColor(selectView==item.tab ? .primary : .secondary)
+                .foregroundColor(selectTab==item.tab ? .primary : .secondary)
                 .buttonStyle(.plain)
                 Spacer()
                 
@@ -85,19 +82,9 @@ struct MyTabView: View {
 
 
 
-struct MyTabButtonStyle:ButtonStyle {
-    func makeBody(configuration: Configuration) -> some View {
-        configuration.label
-    }
-}
-
-
-
-
 // MARK: - 预览
-
 //struct MyTabView_Previews: PreviewProvider {
 //    static var previews: some View {
-//        MyTabView()
+//        MyTabView(selectTab: .constant(.diary),selectView: .constant(.diary))
 //    }
 //}

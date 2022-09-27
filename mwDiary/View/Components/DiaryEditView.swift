@@ -19,51 +19,89 @@ struct DiaryEditView: View {
     
     @Binding var selectEntity:DiaryEntity?
     
+    @FocusState var isInputActive: Bool
+    
     
     var body: some View{
-        VStack{
-            Group{
-                //MARK: - 输入框
-                MyTextFieldwithUIKIT(text: $editTitle, placeholder: defaultTitle, isFirstResponder: $beginEditTitle)
-                    .frame(height: 56,alignment: .center)
-                    .overlay( RoundedRectangle(cornerRadius: 10, style: .continuous)
-                        .stroke(.primary, lineWidth: 3)
-                    )
-                    .padding(.top,20)
-                TextEditor(text: $editText)
-                    .autocorrectionDisabled(true)
-                    .overlay( RoundedRectangle(cornerRadius: 10, style: .continuous)
-                        .stroke(.primary, lineWidth: 4)
-                    )
-                    .cornerRadius(10)
-                if selectEntity?.modified_date != selectEntity?.create_date {
-                    Text("Modified "+dateFormatterMMMddHHmm.string(from: selectEntity?.modified_date ?? Date()))
-                        .font(.footnote)
-                        .frame(maxWidth: .infinity,alignment: .trailing)
-                }
-                
-                Button {
-                    //                    guard !editText.isEmpty else { return }
-                    if selectEntity == nil {
-                        diaryvm.addDiary(titlestr: editTitle.isEmpty ? defaultTitle : editTitle, bodystr: editText.isEmpty ? defaultBody : editText)
-                    } else {
-                        diaryvm.updateDiary(titlestr: editTitle.isEmpty ? defaultTitle : editTitle, bodystr: editText.isEmpty ? "" : editText, entity: selectEntity)
+        NavigationView {
+            VStack{
+                Group{
+                    //MARK: - 输入框
+                    MyTextFieldWithUIKit(text: $editTitle, placeholder: defaultTitle, isFirstResponder: $beginEditTitle)
+                    
+                        .frame(height: 56,alignment: .center)
+                        .overlay( RoundedRectangle(cornerRadius: 10, style: .continuous)
+                            .stroke(.primary, lineWidth: 3)
+                        )
+                        .padding(.top,20)
+                    TextEditor(text: $editText)
+                        .focused($isInputActive)
+                        .toolbar {
+                            ToolbarItem(placement: .keyboard) {
+                                HStack {
+                                    Button {
+                                        editText += " "+dateFormatterHHmmss.string(from: Date())
+                                    } label: {
+                                        Image(systemName: "clock")
+                                    }
+                                    Button {
+                                        editText += " "+dateFormatteryyyyMMdd.string(from: Date())
+                                    } label: {
+                                        Image(systemName: "calendar")
+                                    }
+//                                    Spacer()
+                                    Button {
+                                        isInputActive = false
+                                    } label: {
+                                        Image(systemName: "keyboard.chevron.compact.down")
+                                    }
+                                }
+                                
+                                
+
+                            }
+                        }
+                    
+                        .autocorrectionDisabled(true)
+                        .overlay( RoundedRectangle(cornerRadius: 10, style: .continuous)
+                            .stroke(.primary, lineWidth: 4)
+                        )
+                        .cornerRadius(10)
+                    HStack{
+                        if selectEntity?.modified_date != selectEntity?.create_date {
+                            Text("Modified "+dateFormatterMMMddHHmm.string(from: selectEntity?.modified_date ?? Date()))
+                                .font(.footnote)
+                                .frame(maxWidth: .infinity,alignment: .leading)
+                        }
+                        Spacer()
+                        //MARK: Save
+                        Button {
+                            //                    guard !editText.isEmpty else { return }
+                            if selectEntity == nil {
+                                diaryvm.addDiary(titlestr: editTitle.isEmpty ? defaultTitle : editTitle, bodystr: editText.isEmpty ? defaultBody : editText)
+                            } else {
+                                diaryvm.updateDiary(titlestr: editTitle.isEmpty ? defaultTitle : editTitle, bodystr: editText.isEmpty ? "" : editText, entity: selectEntity)
+                            }
+                            editTitle = ""
+                            editText = ""
+                            showEditView = false
+                            selectEntity = nil
+                        } label: {
+                            Text("save")
+                                .foregroundColor(Color(.systemBackground))
+//                                .padding(10)
+                        }
+                        .buttonStyle(.borderedProminent)
+//                        .border(.black)
                     }
-                    editTitle = ""
-                    editText = ""
-                    showEditView = false
-                    selectEntity = nil
-                } label: {
-                    Text("save")
-                }.buttonStyle(.bordered)
+                }
+                //MARK: - 键盘按键定制
+
             }
-//            MARK: - test
-//            Group{
-//                Text("\(editTitle)")
-//                Text("\(editText)")
-//            }
-        }
-        .padding(.horizontal)
+            .padding(.horizontal)
+        }.navigationViewStyle(StackNavigationViewStyle())
+        
+        
     }
 }
 

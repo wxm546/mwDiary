@@ -101,17 +101,20 @@ class DiaryViewMode:ObservableObject{
     }
     
     
-    //TODO: - 
+    //导出功能
     @State private var isShareSheetShowing = false
     func exportAllToCSV() {
-        
-        let fileName = "mwDiary\(dateFormatterMMMddHHmm.string(from:Date())).csv"
-        
+        //csv抬头
+        let fileName = "mwDiary - \(exportDateFormatteryyyyMMddHHmmss.string(from:Date())).csv"
+        //设定地址 不用管
         let path = NSURL(fileURLWithPath: NSTemporaryDirectory()).appendingPathComponent(fileName)
-        var csvText = "Date,Type\n"
+        //csv表头
+        var csvText = "create_date,modified_date,title,body,is_fav\n"
+        //csv表内容
         for dia in self.savedEntities {
-            csvText += "\(dia.create_date ?? Date()),\(dia.modified_date ?? Date()),\(dia.title ?? "no title"),\(dia.body ?? "no body"),\(dia.is_fav)\n"
+            csvText += "\(exportDateFormatteryyyyMMddHHmmss.string(from: dia.create_date!)),\(exportDateFormatteryyyyMMddHHmmss.string(from: dia.create_date!)),\(dia.title ?? "no title"),\(dia.body ?? "no body"),\(dia.is_fav)\n"
         }
+        //写入文件
         do {
             try csvText.write(to: path!, atomically: true, encoding: String.Encoding.utf8)
         } catch {
@@ -119,20 +122,20 @@ class DiaryViewMode:ObservableObject{
             print("\(error)")
         }
         print(path ?? "not found")
+        //弹出分享栏
         var filesToShare = [Any]()
         filesToShare.append(path!)
         let av = UIActivityViewController(activityItems: filesToShare, applicationActivities: nil)
-        UIApplication.shared.windows.first?.rootViewController?.present(av, animated: true, completion: nil)
+        UIApplication.shared.connectedScenes
+                                .map({ $0 as? UIWindowScene })
+                                .compactMap({ $0 })
+                                .first?.windows.first!.rootViewController?.present(av, animated: true, completion: nil)
         isShareSheetShowing.toggle()
         
     }
-    
-    
-    
-    
-    
-    
+
     
 }
+
 
 

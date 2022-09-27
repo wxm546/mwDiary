@@ -25,10 +25,9 @@ struct MyDatePicker: View {
     @Binding var searchStr:String
     
     var body: some View {
-//        GeometryReader{geo in
             VStack{
                 VStack(spacing: 0) {
-                    Text(dateFormatteryyyyMMMM.string(from:selectDate ))
+//                    Text(dateFormatteryyyyMMMM.string(from:selectDate ))
                     HStack(spacing:0){
                         Picker("Picker", selection: $selectMon){
                             ForEach(months, id: \.self ) { name in
@@ -82,9 +81,6 @@ struct MyDatePicker: View {
                 }
 
             }
-            
-//        }
-        
     }
 }
 
