@@ -41,6 +41,7 @@
 		C453B0EB28E285230042B671 /* JournalView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C453B0D028E285230042B671 /* JournalView.swift */; };
 		C453B0EC28E285230042B671 /* FavView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C453B0D128E285230042B671 /* FavView.swift */; };
 		C453B0ED28E285230042B671 /* SettingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C453B0D228E285230042B671 /* SettingView.swift */; };
+		C4D50A9728E29AE6003BE66B /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = C4D50A9628E29AE6003BE66B /* README.md */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -99,6 +100,7 @@
 		C453B0D028E285230042B671 /* JournalView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JournalView.swift; sourceTree = "<group>"; };
 		C453B0D128E285230042B671 /* FavView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FavView.swift; sourceTree = "<group>"; };
 		C453B0D228E285230042B671 /* SettingView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingView.swift; sourceTree = "<group>"; };
+		C4D50A9628E29AE6003BE66B /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -129,6 +131,7 @@
 		C453B07428E284A50042B671 = {
 			isa = PBXGroup;
 			children = (
+				C4D50A9628E29AE6003BE66B /* README.md */,
 				C453B07F28E284A50042B671 /* mwDiary */,
 				C453B09628E284A90042B671 /* mwDiaryTests */,
 				C453B0A028E284A90042B671 /* mwDiaryUITests */,
@@ -378,6 +381,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C4D50A9728E29AE6003BE66B /* README.md in Resources */,
 				C453B08E28E284A80042B671 /* Preview Assets.xcassets in Resources */,
 				C453B0D428E285230042B671 /* write.json in Resources */,
 				C453B0D328E285230042B671 /* mmDiaryStore.storekit in Resources */,
