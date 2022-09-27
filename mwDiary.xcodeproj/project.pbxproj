@@ -11,9 +11,6 @@
 		C453B08628E284A50042B671 /* mwDiary.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = C453B08428E284A50042B671 /* mwDiary.xcdatamodeld */; };
 		C453B08A28E284A80042B671 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C453B08928E284A80042B671 /* Assets.xcassets */; };
 		C453B08E28E284A80042B671 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C453B08D28E284A80042B671 /* Preview Assets.xcassets */; };
-		C453B09828E284A90042B671 /* mwDiaryTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C453B09728E284A90042B671 /* mwDiaryTests.swift */; };
-		C453B0A228E284A90042B671 /* mwDiaryUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C453B0A128E284A90042B671 /* mwDiaryUITests.swift */; };
-		C453B0A428E284A90042B671 /* mwDiaryUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C453B0A328E284A90042B671 /* mwDiaryUITestsLaunchTests.swift */; };
 		C453B0D328E285230042B671 /* mmDiaryStore.storekit in Resources */ = {isa = PBXBuildFile; fileRef = C453B0B128E285220042B671 /* mmDiaryStore.storekit */; };
 		C453B0D428E285230042B671 /* write.json in Resources */ = {isa = PBXBuildFile; fileRef = C453B0B328E285220042B671 /* write.json */; };
 		C453B0D528E285230042B671 /* hi.json in Resources */ = {isa = PBXBuildFile; fileRef = C453B0B428E285220042B671 /* hi.json */; };
@@ -44,23 +41,6 @@
 		C4D50A9728E29AE6003BE66B /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = C4D50A9628E29AE6003BE66B /* README.md */; };
 /* End PBXBuildFile section */
 
-/* Begin PBXContainerItemProxy section */
-		C453B09428E284A90042B671 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = C453B07528E284A50042B671 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = C453B07C28E284A50042B671;
-			remoteInfo = mwDiary;
-		};
-		C453B09E28E284A90042B671 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = C453B07528E284A50042B671 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = C453B07C28E284A50042B671;
-			remoteInfo = mwDiary;
-		};
-/* End PBXContainerItemProxy section */
-
 /* Begin PBXFileReference section */
 		C453B07D28E284A50042B671 /* mwDiary.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = mwDiary.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C453B08028E284A50042B671 /* mwDiaryApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = mwDiaryApp.swift; sourceTree = "<group>"; };
@@ -68,11 +48,6 @@
 		C453B08928E284A80042B671 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		C453B08B28E284A80042B671 /* mwDiary.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = mwDiary.entitlements; sourceTree = "<group>"; };
 		C453B08D28E284A80042B671 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
-		C453B09328E284A90042B671 /* mwDiaryTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = mwDiaryTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		C453B09728E284A90042B671 /* mwDiaryTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = mwDiaryTests.swift; sourceTree = "<group>"; };
-		C453B09D28E284A90042B671 /* mwDiaryUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = mwDiaryUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		C453B0A128E284A90042B671 /* mwDiaryUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = mwDiaryUITests.swift; sourceTree = "<group>"; };
-		C453B0A328E284A90042B671 /* mwDiaryUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = mwDiaryUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		C453B0B128E285220042B671 /* mmDiaryStore.storekit */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = mmDiaryStore.storekit; sourceTree = "<group>"; };
 		C453B0B328E285220042B671 /* write.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = write.json; sourceTree = "<group>"; };
 		C453B0B428E285220042B671 /* hi.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = hi.json; sourceTree = "<group>"; };
@@ -111,20 +86,6 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		C453B09028E284A90042B671 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		C453B09A28E284A90042B671 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -133,8 +94,6 @@
 			children = (
 				C4D50A9628E29AE6003BE66B /* README.md */,
 				C453B07F28E284A50042B671 /* mwDiary */,
-				C453B09628E284A90042B671 /* mwDiaryTests */,
-				C453B0A028E284A90042B671 /* mwDiaryUITests */,
 				C453B07E28E284A50042B671 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -143,8 +102,6 @@
 			isa = PBXGroup;
 			children = (
 				C453B07D28E284A50042B671 /* mwDiary.app */,
-				C453B09328E284A90042B671 /* mwDiaryTests.xctest */,
-				C453B09D28E284A90042B671 /* mwDiaryUITests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -162,7 +119,6 @@
 				C453B0C828E285230042B671 /* ViewModel */,
 				C453B0C228E285230042B671 /* Extension */,
 				C453B0B028E285220042B671 /* Resources */,
-				C453B08C28E284A80042B671 /* Preview Content */,
 			);
 			path = mwDiary;
 			sourceTree = "<group>";
@@ -175,29 +131,13 @@
 			path = "Preview Content";
 			sourceTree = "<group>";
 		};
-		C453B09628E284A90042B671 /* mwDiaryTests */ = {
-			isa = PBXGroup;
-			children = (
-				C453B09728E284A90042B671 /* mwDiaryTests.swift */,
-			);
-			path = mwDiaryTests;
-			sourceTree = "<group>";
-		};
-		C453B0A028E284A90042B671 /* mwDiaryUITests */ = {
-			isa = PBXGroup;
-			children = (
-				C453B0A128E284A90042B671 /* mwDiaryUITests.swift */,
-				C453B0A328E284A90042B671 /* mwDiaryUITestsLaunchTests.swift */,
-			);
-			path = mwDiaryUITests;
-			sourceTree = "<group>";
-		};
 		C453B0B028E285220042B671 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				C453B08C28E284A80042B671 /* Preview Content */,
+				C453B0B228E285220042B671 /* lottie */,
 				C453B0B128E285220042B671 /* mmDiaryStore.storekit */,
 				C453B0B528E285220042B671 /* Store.swift */,
-				C453B0B228E285220042B671 /* lottie */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -297,42 +237,6 @@
 			productReference = C453B07D28E284A50042B671 /* mwDiary.app */;
 			productType = "com.apple.product-type.application";
 		};
-		C453B09228E284A90042B671 /* mwDiaryTests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = C453B0AA28E284A90042B671 /* Build configuration list for PBXNativeTarget "mwDiaryTests" */;
-			buildPhases = (
-				C453B08F28E284A90042B671 /* Sources */,
-				C453B09028E284A90042B671 /* Frameworks */,
-				C453B09128E284A90042B671 /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				C453B09528E284A90042B671 /* PBXTargetDependency */,
-			);
-			name = mwDiaryTests;
-			productName = mwDiaryTests;
-			productReference = C453B09328E284A90042B671 /* mwDiaryTests.xctest */;
-			productType = "com.apple.product-type.bundle.unit-test";
-		};
-		C453B09C28E284A90042B671 /* mwDiaryUITests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = C453B0AD28E284A90042B671 /* Build configuration list for PBXNativeTarget "mwDiaryUITests" */;
-			buildPhases = (
-				C453B09928E284A90042B671 /* Sources */,
-				C453B09A28E284A90042B671 /* Frameworks */,
-				C453B09B28E284A90042B671 /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				C453B09F28E284A90042B671 /* PBXTargetDependency */,
-			);
-			name = mwDiaryUITests;
-			productName = mwDiaryUITests;
-			productReference = C453B09D28E284A90042B671 /* mwDiaryUITests.xctest */;
-			productType = "com.apple.product-type.bundle.ui-testing";
-		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -345,14 +249,6 @@
 				TargetAttributes = {
 					C453B07C28E284A50042B671 = {
 						CreatedOnToolsVersion = 14.0;
-					};
-					C453B09228E284A90042B671 = {
-						CreatedOnToolsVersion = 14.0;
-						TestTargetID = C453B07C28E284A50042B671;
-					};
-					C453B09C28E284A90042B671 = {
-						CreatedOnToolsVersion = 14.0;
-						TestTargetID = C453B07C28E284A50042B671;
 					};
 				};
 			};
@@ -370,8 +266,6 @@
 			projectRoot = "";
 			targets = (
 				C453B07C28E284A50042B671 /* mwDiary */,
-				C453B09228E284A90042B671 /* mwDiaryTests */,
-				C453B09C28E284A90042B671 /* mwDiaryUITests */,
 			);
 		};
 /* End PBXProject section */
@@ -387,20 +281,6 @@
 				C453B0D328E285230042B671 /* mmDiaryStore.storekit in Resources */,
 				C453B0D528E285230042B671 /* hi.json in Resources */,
 				C453B08A28E284A80042B671 /* Assets.xcassets in Resources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		C453B09128E284A90042B671 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		C453B09B28E284A90042B671 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -440,37 +320,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		C453B08F28E284A90042B671 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				C453B09828E284A90042B671 /* mwDiaryTests.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		C453B09928E284A90042B671 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				C453B0A428E284A90042B671 /* mwDiaryUITestsLaunchTests.swift in Sources */,
-				C453B0A228E284A90042B671 /* mwDiaryUITests.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXSourcesBuildPhase section */
-
-/* Begin PBXTargetDependency section */
-		C453B09528E284A90042B671 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = C453B07C28E284A50042B671 /* mwDiary */;
-			targetProxy = C453B09428E284A90042B671 /* PBXContainerItemProxy */;
-		};
-		C453B09F28E284A90042B671 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = C453B07C28E284A50042B671 /* mwDiary */;
-			targetProxy = C453B09E28E284A90042B671 /* PBXContainerItemProxy */;
-		};
-/* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
 		C453B0A528E284A90042B671 /* Debug */ = {
@@ -666,96 +516,6 @@
 			};
 			name = Release;
 		};
-		C453B0AB28E284A90042B671 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				BUNDLE_LOADER = "$(TEST_HOST)";
-				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = DSHX4V92NH;
-				GENERATE_INFOPLIST_FILE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
-				MACOSX_DEPLOYMENT_TARGET = 12.3;
-				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = wxm.mwDiaryTests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SDKROOT = auto;
-				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx";
-				SWIFT_EMIT_LOC_STRINGS = NO;
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/mwDiary.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/mwDiary";
-			};
-			name = Debug;
-		};
-		C453B0AC28E284A90042B671 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				BUNDLE_LOADER = "$(TEST_HOST)";
-				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = DSHX4V92NH;
-				GENERATE_INFOPLIST_FILE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
-				MACOSX_DEPLOYMENT_TARGET = 12.3;
-				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = wxm.mwDiaryTests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SDKROOT = auto;
-				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx";
-				SWIFT_EMIT_LOC_STRINGS = NO;
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/mwDiary.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/mwDiary";
-			};
-			name = Release;
-		};
-		C453B0AE28E284A90042B671 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = DSHX4V92NH;
-				GENERATE_INFOPLIST_FILE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
-				MACOSX_DEPLOYMENT_TARGET = 12.3;
-				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = wxm.mwDiaryUITests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SDKROOT = auto;
-				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx";
-				SWIFT_EMIT_LOC_STRINGS = NO;
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_TARGET_NAME = mwDiary;
-			};
-			name = Debug;
-		};
-		C453B0AF28E284A90042B671 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = DSHX4V92NH;
-				GENERATE_INFOPLIST_FILE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
-				MACOSX_DEPLOYMENT_TARGET = 12.3;
-				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = wxm.mwDiaryUITests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SDKROOT = auto;
-				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx";
-				SWIFT_EMIT_LOC_STRINGS = NO;
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_TARGET_NAME = mwDiary;
-			};
-			name = Release;
-		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -773,24 +533,6 @@
 			buildConfigurations = (
 				C453B0A828E284A90042B671 /* Debug */,
 				C453B0A928E284A90042B671 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		C453B0AA28E284A90042B671 /* Build configuration list for PBXNativeTarget "mwDiaryTests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				C453B0AB28E284A90042B671 /* Debug */,
-				C453B0AC28E284A90042B671 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		C453B0AD28E284A90042B671 /* Build configuration list for PBXNativeTarget "mwDiaryUITests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				C453B0AE28E284A90042B671 /* Debug */,
-				C453B0AF28E284A90042B671 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
