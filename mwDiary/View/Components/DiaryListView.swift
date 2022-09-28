@@ -9,10 +9,12 @@ import SwiftUI
 
 
 struct DiaryListView: View {
+    //MARK: - Appearance
+    @AppStorage("smallTitle") var smallTitle:Bool = false
+    //MARK: - ViewModel
+    @EnvironmentObject var diaryvm:DiaryViewMode
     
     @Environment(\.isSearching) var isSearching
-    @AppStorage("smallTitle") var smallTitle:Bool = false
-    @EnvironmentObject var diaryvm:DiaryViewMode
     @Binding var editTitle:String
     @Binding var editText:String
     @Binding var showEditView:Bool
@@ -26,16 +28,9 @@ struct DiaryListView: View {
     
     var body: some View{
         
-        //        ScrollView{
-        //        GeometryReader{ geo in
         List{
-            //                Text("\(geo.size.height)-\(geo.size.width)-\(geo.safeAreaInsets.top)")
-            //                Text("\(geo.frame)-\(geo.safeAreaInsets.bottom)")
             ForEach(filteredDiary) { entity in
-                
                 DiaryCardView(diary: entity)
-                //                        Text("\(geo2.size.height)")
-                
                 //MARK: - 设置边距
                     .padding(.vertical,10)
                     .padding(.horizontal,18)
@@ -61,21 +56,20 @@ struct DiaryListView: View {
                         //MARK: "Fav"
                         Button {
                             selectEntity = entity
-                            diaryvm.favToggle(entity: entity)
-                            withAnimation (.easeInOut(duration: 0.2)){
-                                isShowFavToastAlert = true
+                            withAnimation (.easeOut(duration: 1.1)){
+                                diaryvm.favToggle(entity: entity)
                             }
+                            isShowFavToastAlert = true
                             DispatchQueue.main.asyncAfter(deadline: .now() + 1.5,execute: {
                                 withAnimation (.easeInOut(duration: 0.2)){
-                                    self.isShowFavToastAlert = false
+                                    isShowFavToastAlert = false
+                                    selectEntity = nil
                                 }
                             })
-                            selectEntity = nil
                         } label: {
                             Image(systemName:entity.is_fav ? "heart.slash" : "heart.fill" ).font(.title)
                         }
                         .tint(Color(entity.is_fav ? .systemGray2 : .systemYellow))
-                        
                     })
                     .swipeActions(edge: .leading, allowsFullSwipe: true, content: {
                         
@@ -92,18 +86,12 @@ struct DiaryListView: View {
                         .tint(Color(.systemBlue))})
                 
             }//foreach
+            
             .listRowSeparator(.hidden)
             .listRowInsets(EdgeInsets())
-            //        }//list
+                    }//list
             //MARK: - searchpreference
-            
-        }//scrollView
-        
-        //        .refresher(refreshView: EmojiRefreshView.init ) { done in
-        //            print("hello")
-        //            done()
-        //        }
-        //            .onSubmit(of: .search) { print("hello") }
+
         .listStyle(.plain)
         .preference(key: IsSearchingPreferenceKey.self, value: isSearching)
         //        .scrollIndicators(.automatic)
@@ -113,12 +101,12 @@ struct DiaryListView: View {
         .confirmationDialog(Text("You are deleting this journal:\n\(selectEntity?.title ?? "no title")"), isPresented: $showDeleteAlert, titleVisibility: .visible, actions: {
             Button("delete",role: .destructive){
                 withAnimation(.easeInOut(duration: 0.5)){
-                    diaryvm.deleteDiaryWithEntity(entity: selectEntity!)}
+                diaryvm.deleteDiaryWithEntity(entity: selectEntity!)}
                 selectEntity = nil
                 isShowDeleteToastAlert = true
                 DispatchQueue.main.asyncAfter(deadline: .now() + 1.5,execute: {
                     withAnimation (.easeInOut(duration: 0.2)){
-                        self.isShowDeleteToastAlert = false
+                        isShowDeleteToastAlert = false
                     }
                 })
             }
@@ -126,11 +114,7 @@ struct DiaryListView: View {
         //MARK: - 编辑界面
         .sheet(isPresented: $showEditView,onDismiss: { selectEntity = nil }, content: {
             DiaryEditView(editTitle: $editTitle, editText: $editText, showEditView: $showEditView, selectEntity: $selectEntity)
-        }).tint(.primary)
-        //        }
-        //geo
-        
-        
+        })
     }
 }
 

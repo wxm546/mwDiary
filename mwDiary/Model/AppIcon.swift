@@ -1,16 +1,19 @@
 //
 //  AppIcon.swift
-//  mmDiary
+//  mwDiary
 //
-//  Created by wxm on 2022/9/23.
+//  Created by wxm on 2022/9/28.
 //
 
-import Foundation
+import SwiftUI
 
 
+
+//MARK: - AppIcon
 struct AppIcon:Identifiable {
     var id:UUID = UUID()
     var iconName:String?
     var logoName:String
 }
+
 

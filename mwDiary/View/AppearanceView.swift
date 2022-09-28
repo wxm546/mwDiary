@@ -21,14 +21,16 @@ struct AppearanceListCell: View {
 }
 
 
-
-
 struct AppearanceView: View {
-    @EnvironmentObject var diaryvm:DiaryViewMode
-    @AppStorage("smallTitle") var smallTitle:Bool = false
-    @AppStorage("appTheme") var appTheme:String = "Automatic"
-    @AppStorage("heartColor") var heartColor:String = "yellow"
 
+
+    @EnvironmentObject var diaryvm:DiaryViewMode
+    @AppStorage("appTheme") var appTheme:ThemeType = .Automatic
+    @AppStorage("heartColor") var appHeartColor:HeartColorType = .yellow
+    @AppStorage("smallTitle") var smallTitle:Bool = false
+    private var navTitle = "Appearance"
+    
+    
     private let icons:[AppIcon] = [
         AppIcon(iconName: nil, logoName: "icon 1"),
         AppIcon(iconName: "AppIcon 2", logoName: "icon 2"),
@@ -37,136 +39,159 @@ struct AppearanceView: View {
         AppIcon(iconName: "AppIcon 5", logoName: "icon 5"),
     ]
     
-    private let themes:[Themetest] = [
-        Themetest(name: "Automatic", icon: "sparkles"),
-        Themetest(name: "Light", icon: "sun.max"),
-        Themetest(name: "Dark", icon: "moon")
+    private let themes:[Theme] = [
+        Theme(theme: .Automatic),
+        Theme(theme: .Light),
+        Theme(theme: .Dark),
+//        Theme(theme: .rainbow)
     ]
     
-    private let heartColors:[UIColor] = [.systemYellow,.systemRed,.systemBlue]
+    @State var isplay = false
+    private let heartColors:[HeartColor] = [HeartColor(color: .primary),
+                                            HeartColor(color: .yellow),
+                                            HeartColor(color: .red),
+                                            HeartColor(color: .blue),
+                                            HeartColor(color: .cyan)
+    ]
     
     var body: some View {
+        
         NavigationView {
+            
             List{
-                //TODO: - change ColorTheme
-                Section ("THEMES"){
-                    VStack(alignment:.leading,spacing: 0){
-                        ForEach(themes) { theme in
-                            HStack{
-                                Label(theme.name, systemImage: theme.icon)
-                                    .font(.headline)
-                                    .padding(.leading)
-                                Spacer()
-                                Image(systemName: "checkmark")
-                                    .opacity(appTheme==theme.name ? 1 : 0)
-                                    .padding(.trailing)
-                            }
-                            .frame(height: 50)
-                            .background(Color(.systemBackground))
-                            .overlay(content: {
-                                Color.clear
-                            })
-//                            .cornerRadius(20)
-                            .onTapGesture {
-                                withAnimation(.easeOut) {
-                                    appTheme = theme.name
+                Group{
+                    //TODO: - change ColorTheme
+                    Section {
+                        VStack(alignment:.leading,spacing: 0){
+                            ForEach(themes) { theme in
+                                HStack{
+                                    Label(theme.name, systemImage: theme.icon)
+                                        .labelStyle(.titleAndIcon)
+                                        .font(.headline)
+                                        .padding(.leading)
+                                    Spacer()
+                                    Image(systemName: "checkmark")
+                                        .opacity(appTheme == theme.theme ? 1 : 0)
+                                        .padding(.trailing)
                                 }
-                                
-                                
+                                .frame(height: 50)
+                                //用于点击
+                                .background(appTheme.backColor)
+                                .onTapGesture {
+                                    withAnimation(.easeOut) {
+                                        appTheme = theme.theme
+                                    }
+                                }
                             }
+                        }
+                    } header: {
+                        Text("THEMES")
+                    }
+                    .listRowBackground(appTheme.backColor)
+                    //MARK: - change icon
+                    
+                    Section{
+                        ScrollView(.horizontal){
+                            HStack{
+                                ForEach(icons){ icon in
+                                    Button {
+                                        UIApplication.shared.setAlternateIconName(icon.iconName)
+                                    } label: {
+                                        Image(icon.logoName)
+                                            .resizable()
+                                            .frame(width: 88, height: 88)
+                                            .cornerRadius(20)
+                                            .padding()
+                                    }
+                                }
+                            }
+                        }
+                    } header: {
+                        Text("APP ICON")
+                    }
+                    .listRowBackground(appTheme.backColor)
+                    
+                    
+                    //MARK: - change favcolor
+                    Section{
+                        ScrollView(.horizontal){
+                            HStack(spacing:0){
+                                ForEach(heartColors){ item in
+                                    Button {
+                                        appHeartColor = item.color
+                                    } label: {
+                                        Image(systemName: "heart.fill")
+                                            .font(.title)
+                                            .foregroundColor(item.color.SwiftUiColor)
+                                            .frame(width: 45, height: 45)
+                                            .cornerRadius(20)
+                                            .padding(.vertical)
+                                            .padding(.horizontal,15)
+                                            .overlay{
+                                                if item.color == appHeartColor {
+                                                    item.color.SwiftUiColor
+                                                        .frame(height:5)
+                                                        .frame(maxHeight:.infinity,alignment:.bottom)
+                                                }
+                                            }
+                                    }
+                                }
+                            }
+                        }
+                    } header: {
+                        Text("Heart Color")
+                    }
+                    .listRowBackground(appTheme.backColor)
+                    
+                    
+                    //TODO: - change LAYOUT
+                    Section{
+                        VStack(spacing:18){
+                            DiaryCardLayOutView()
+                        }
+                    } header: {
+                        Text("LAYOUT")
+                    }
+                    .listRowBackground(appTheme.backColor)
+                    
+                    Section{
+                        //TODO: - change font
+                        
+                        //TODO: - new jour title
+                        
+                        //MARK: - change small title
+                        Toggle(isOn: $smallTitle) {
+                            AppearanceListCell(title: "Small Title", description: "Title style above every page")
                             
                         }
+                        .tint(appHeartColor.SwiftUiColor)
+                        .safeAreaInset(edge: .bottom, content: {Color.clear.frame(height: 50)})
+                    } header: {
+                        Text("MORE")
                     }
+                    .listRowBackground(appTheme.backColor)
                     
                 }
-                
-                //MARK: - change icon
-                Section("APP ICON"){
-                    ScrollView(.horizontal){
-                        HStack{
-                            ForEach(icons){ icon in
-                                Button {
-                                    UIApplication.shared.setAlternateIconName(icon.iconName)
-                                } label: {
-                                    Image(icon.logoName)
-                                        .resizable()
-                                        .frame(width: 88, height: 88)
-                                        .cornerRadius(20)
-                                        .padding()
-                                }
-                            }
-                        }
-                    }
-                }
-                //MARK: - change favcolor
-                Section("Heart Color"){
-                    ScrollView(.horizontal){
-                        HStack{
-                            ForEach(heartColors,id:\.self){ color in
-                                Button {
-                                
-                                } label: {
-                                    Image(systemName: "heart")
-                                        .font(.title)
-                                        .foregroundColor(Color(color))
-                                        .symbolVariant(.fill)
-                                        .frame(width: 44, height: 44)
-                                        .cornerRadius(20)
-                                        .padding()
-                                }
-                            }
-                        }
-                    }
-                }
-                
-                //TODO: - change LAYOUT
-                Section("LAYOUT"){
-                    VStack(spacing:18){
-                        DiaryCardLayOutView()
-                        DiaryCardLayOutView()
-                        DiaryCardLayOutView()
-                    }
-                }
-                
-                
-                
-                Section("MORE"){
-                    //TODO: - change font
-                    
-                    //TODO: - new jour title
-                    
-                    //MARK: - change small title
-                    Toggle(isOn: $smallTitle) {
-                        AppearanceListCell(title: "Small Title", description: "Title style above every page")
-                    }
-                }
-                
-                
-                
-                
             }//list
-//            .scrollIndicators(.hidden)
-            //            .padding(.horizontal,50)
-            //            .symbolVariant(.circle.fill)
-            .tint(.primary)
             .listStyle(.plain)
-            .headerProminence(.standard)
+            .background(appTheme.backColor)
             
-            .navigationTitle("Appearance")
+            
+            .navigationTitle(navTitle)
             .navigationBarTitleDisplayMode(.inline)
-            .safeAreaInset(edge: .bottom, content: {Color.clear.frame(height: 50)})
         }//nav
         .navigationViewStyle(StackNavigationViewStyle())
     }
 }
 
 
+
+
 struct AppearanceView_Previews: PreviewProvider {
     static var previews: some View {
         AppearanceView()
             .environmentObject(DiaryViewMode())
+//            .preferredColorScheme(.dark)
     }
 }
-
-
 

@@ -17,7 +17,7 @@ struct JournalView: View {
     @State var editText = ""
     @State var showEditView = false
     @State var showDeleteAlert:Bool = false
-    private var navTitle = dateFormatterMMMM.string(from: Date())
+    private var navTitle = "Journals"
     @State var isShowFavToastAlert = false
     @State var isShowDeleteToastAlert = false
     //MARK: - ViewModel
@@ -48,22 +48,24 @@ struct JournalView: View {
         ZStack {
             
             NavigationView {
-                
-                DiaryListView(
-                    editTitle: $editTitle,
-                    editText: $editText,
-                    showEditView: $showEditView,
-                    showDeleteAlert: $showDeleteAlert,
-                    selectEntity: $selectEntity,
-                    isShowFavToastAlert: $isShowFavToastAlert,
-                    isShowDeleteToastAlert: $isShowFavToastAlert,
-                    filteredDiary: filteredDiary)
+                VStack{
+                    DiaryListView(
+                        editTitle: $editTitle,
+                        editText: $editText,
+                        showEditView: $showEditView,
+                        showDeleteAlert: $showDeleteAlert,
+                        selectEntity: $selectEntity,
+                        isShowFavToastAlert: $isShowFavToastAlert,
+                        isShowDeleteToastAlert: $isShowFavToastAlert,
+                        filteredDiary: filteredDiary)
                     .onPreferenceChange(IsSearchingPreferenceKey.self) { value in
                         withAnimation (.easeInOut){
                             self.isSearchingValue = value
                         }
                     }
-                .searchable(text: $searchStr)
+                    Rectangle().foregroundColor(.clear).frame(height: 40)
+                }
+                .searchable(text:$searchStr,prompt: "")
                 .navigationTitle(navTitle)
             }
             .navigationViewStyle(StackNavigationViewStyle())
@@ -83,7 +85,7 @@ struct JournalView: View {
                 .frame(width: 50, height: 50)
                 .frame(maxWidth:.infinity,maxHeight: .infinity,alignment:filteredDiary==[] ? .center : .topTrailing)
                 .padding(.trailing,10)
-                .tint(.primary)
+                .tint(Color(.label))
             }
             
             //MARK: - 弹窗
@@ -95,9 +97,7 @@ struct JournalView: View {
                 }
             }
             if isShowDeleteToastAlert {
-                if selectEntity?.is_fav == true {
                     ToastAlertView(icon: "",text: "Diary deleted").zIndex(1)
-                }
             }
             //MARK: - 弹窗datepicker
             if isShowDatePicker {

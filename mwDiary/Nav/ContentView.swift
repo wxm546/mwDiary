@@ -9,26 +9,17 @@ import SwiftUI
 
 struct ContentView: View {
     
-    @AppStorage("appTheme") var appTheme:String = "Automatic"
+    @AppStorage("appTheme") var appTheme:ThemeType = .Automatic
     @State var selectTab:Tab = .diary
     @State var selectView:Tab = .diary
 
-    private func selectTheme(selectTheme:String?) -> ColorScheme?{
-        if selectTheme == "Light" {
-            return ColorScheme.light
-        }else if selectTheme == "Dark" {
-            return ColorScheme.dark
-        }else {
-            return nil
-        }
-    }
-    
     var body: some View {
         ZStack(alignment: .bottom){
             Group{
                 switch selectView{
                 case .diary:
                     DiaryView()
+                    
                 case .journals:
                     JournalView()
                 case .favs:
@@ -37,12 +28,15 @@ struct ContentView: View {
                     SettingView()
                 }
             }
-            .preferredColorScheme(selectTheme(selectTheme: appTheme))
+            .preferredColorScheme(appTheme.SystemColorScheme)
             .frame(maxWidth: .infinity, maxHeight: .infinity)
             MyTabView(selectTab: $selectTab,selectView: $selectView)
+            
         }
+        
     }
 }
+
 
 
 

@@ -7,6 +7,7 @@
 
 import SwiftUI
 
+
 struct ToastAlertView:View {
     var icon:String = "heart"
     var text:String = "Add to Favs"
@@ -14,12 +15,14 @@ struct ToastAlertView:View {
         VStack(spacing:10){
             Image(systemName:icon)
                 .font(.title)
-            Text(text).font(.subheadline)
+            Text(text)
+                .font(.subheadline)
         }
-        .foregroundColor(.black)
+        .foregroundColor(.primary)
         .padding(.horizontal,60)
         .padding(.vertical,28)
-        .background(Material.ultraThinMaterial)
+        .padding(.bottom,icon == "" ? 10 : 0)
+        .background(.ultraThinMaterial)
         .cornerRadius(15)
     }
 }
@@ -28,5 +31,6 @@ struct ToastAlertView:View {
 struct ToastAlertView_Previews: PreviewProvider {
     static var previews: some View {
         ToastAlertView()
+            .preferredColorScheme(.dark)
     }
 }

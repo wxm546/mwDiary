@@ -23,7 +23,6 @@ struct DiaryEditView: View {
     
     
     var body: some View{
-        NavigationView {
             VStack{
                 Group{
                     //MARK: - 输入框
@@ -99,8 +98,8 @@ struct DiaryEditView: View {
 
             }
             .padding(.horizontal)
-        }.navigationViewStyle(StackNavigationViewStyle())
         
+            
         
     }
 }

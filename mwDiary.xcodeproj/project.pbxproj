@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		C40E0E4728E3FDBD00F33F21 /* HeartColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = C40E0E4628E3FDBD00F33F21 /* HeartColor.swift */; };
+		C40E0E4928E3FDE400F33F21 /* AppIcon.swift in Sources */ = {isa = PBXBuildFile; fileRef = C40E0E4828E3FDE400F33F21 /* AppIcon.swift */; };
+		C40E0E4B28E44AB100F33F21 /* arrow.json in Resources */ = {isa = PBXBuildFile; fileRef = C40E0E4A28E44AB100F33F21 /* arrow.json */; };
+		C40E0E4D28E44F6A00F33F21 /* listening-music.json in Resources */ = {isa = PBXBuildFile; fileRef = C40E0E4C28E44F6A00F33F21 /* listening-music.json */; };
 		C453B08128E284A50042B671 /* mwDiaryApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = C453B08028E284A50042B671 /* mwDiaryApp.swift */; };
 		C453B08628E284A50042B671 /* mwDiary.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = C453B08428E284A50042B671 /* mwDiary.xcdatamodeld */; };
 		C453B08A28E284A80042B671 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C453B08928E284A80042B671 /* Assets.xcassets */; };
@@ -22,7 +26,6 @@
 		C453B0DB28E285230042B671 /* MyDatePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = C453B0BB28E285220042B671 /* MyDatePicker.swift */; };
 		C453B0DC28E285230042B671 /* DiaryCardLayOutView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C453B0BC28E285220042B671 /* DiaryCardLayOutView.swift */; };
 		C453B0DD28E285230042B671 /* DiaryEditView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C453B0BD28E285220042B671 /* DiaryEditView.swift */; };
-		C453B0DE28E285230042B671 /* AppIcon.swift in Sources */ = {isa = PBXBuildFile; fileRef = C453B0BF28E285220042B671 /* AppIcon.swift */; };
 		C453B0DF28E285230042B671 /* PreferenceKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = C453B0C028E285220042B671 /* PreferenceKey.swift */; };
 		C453B0E028E285230042B671 /* Tab.swift in Sources */ = {isa = PBXBuildFile; fileRef = C453B0C128E285220042B671 /* Tab.swift */; };
 		C453B0E128E285230042B671 /* MyDefaultValue.swift in Sources */ = {isa = PBXBuildFile; fileRef = C453B0C328E285230042B671 /* MyDefaultValue.swift */; };
@@ -44,14 +47,17 @@
 		C4D8DDD228E344B900436B70 /* heart2.json in Resources */ = {isa = PBXBuildFile; fileRef = C4D8DDCE28E344B900436B70 /* heart2.json */; };
 		C4D8DDD328E344B900436B70 /* heart5.json in Resources */ = {isa = PBXBuildFile; fileRef = C4D8DDCF28E344B900436B70 /* heart5.json */; };
 		C4E54C0F28E2E41600C1B9CA /* BlankButtonStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4E54C0E28E2E41600C1B9CA /* BlankButtonStyle.swift */; };
-		C4E54C1228E2E4C300C1B9CA /* Themes.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4E54C1128E2E4C300C1B9CA /* Themes.swift */; };
+		C4E54C1228E2E4C300C1B9CA /* Theme.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4E54C1128E2E4C300C1B9CA /* Theme.swift */; };
 		C4E54C1428E317AD00C1B9CA /* MyLottieVIew.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4E54C1328E317AD00C1B9CA /* MyLottieVIew.swift */; };
 		C4E54C1728E3191000C1B9CA /* Lottie in Frameworks */ = {isa = PBXBuildFile; productRef = C4E54C1628E3191000C1B9CA /* Lottie */; };
 		C4E54C1928E3194A00C1B9CA /* testView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4E54C1828E3194A00C1B9CA /* testView.swift */; };
-		C4E54C1B28E3225D00C1B9CA /* heart1.json in Resources */ = {isa = PBXBuildFile; fileRef = C4E54C1A28E3225D00C1B9CA /* heart1.json */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		C40E0E4628E3FDBD00F33F21 /* HeartColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeartColor.swift; sourceTree = "<group>"; };
+		C40E0E4828E3FDE400F33F21 /* AppIcon.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppIcon.swift; sourceTree = "<group>"; };
+		C40E0E4A28E44AB100F33F21 /* arrow.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = arrow.json; sourceTree = "<group>"; };
+		C40E0E4C28E44F6A00F33F21 /* listening-music.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "listening-music.json"; sourceTree = "<group>"; };
 		C453B07D28E284A50042B671 /* mwDiary.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = mwDiary.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C453B08028E284A50042B671 /* mwDiaryApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = mwDiaryApp.swift; sourceTree = "<group>"; };
 		C453B08528E284A50042B671 /* mwDiary.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = mwDiary.xcdatamodel; sourceTree = "<group>"; };
@@ -69,7 +75,6 @@
 		C453B0BB28E285220042B671 /* MyDatePicker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyDatePicker.swift; sourceTree = "<group>"; };
 		C453B0BC28E285220042B671 /* DiaryCardLayOutView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DiaryCardLayOutView.swift; sourceTree = "<group>"; };
 		C453B0BD28E285220042B671 /* DiaryEditView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DiaryEditView.swift; sourceTree = "<group>"; };
-		C453B0BF28E285220042B671 /* AppIcon.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppIcon.swift; sourceTree = "<group>"; };
 		C453B0C028E285220042B671 /* PreferenceKey.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PreferenceKey.swift; sourceTree = "<group>"; };
 		C453B0C128E285220042B671 /* Tab.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Tab.swift; sourceTree = "<group>"; };
 		C453B0C328E285230042B671 /* MyDefaultValue.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyDefaultValue.swift; sourceTree = "<group>"; };
@@ -92,10 +97,9 @@
 		C4D8DDCE28E344B900436B70 /* heart2.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = heart2.json; sourceTree = "<group>"; };
 		C4D8DDCF28E344B900436B70 /* heart5.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = heart5.json; sourceTree = "<group>"; };
 		C4E54C0E28E2E41600C1B9CA /* BlankButtonStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlankButtonStyle.swift; sourceTree = "<group>"; };
-		C4E54C1128E2E4C300C1B9CA /* Themes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Themes.swift; sourceTree = "<group>"; };
+		C4E54C1128E2E4C300C1B9CA /* Theme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Theme.swift; sourceTree = "<group>"; };
 		C4E54C1328E317AD00C1B9CA /* MyLottieVIew.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyLottieVIew.swift; sourceTree = "<group>"; };
 		C4E54C1828E3194A00C1B9CA /* testView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = testView.swift; sourceTree = "<group>"; };
-		C4E54C1A28E3225D00C1B9CA /* heart1.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = heart1.json; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -134,6 +138,7 @@
 				C453B08428E284A50042B671 /* mwDiary.xcdatamodeld */,
 				C453B08B28E284A80042B671 /* mwDiary.entitlements */,
 				C453B08928E284A80042B671 /* Assets.xcassets */,
+				C4E54C1828E3194A00C1B9CA /* testView.swift */,
 				C453B08028E284A50042B671 /* mwDiaryApp.swift */,
 				C453B0CA28E285230042B671 /* Nav */,
 				C453B0CD28E285230042B671 /* View */,
@@ -167,11 +172,12 @@
 		C453B0B228E285220042B671 /* lottie */ = {
 			isa = PBXGroup;
 			children = (
+				C40E0E4C28E44F6A00F33F21 /* listening-music.json */,
+				C40E0E4A28E44AB100F33F21 /* arrow.json */,
 				C4D8DDCE28E344B900436B70 /* heart2.json */,
 				C4D8DDCC28E344B800436B70 /* heart3.json */,
 				C4D8DDCD28E344B800436B70 /* heart4.json */,
 				C4D8DDCF28E344B900436B70 /* heart5.json */,
-				C4E54C1A28E3225D00C1B9CA /* heart1.json */,
 				C453B0B328E285220042B671 /* write.json */,
 				C453B0B428E285220042B671 /* hi.json */,
 			);
@@ -195,10 +201,11 @@
 		C453B0BE28E285220042B671 /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				C453B0BF28E285220042B671 /* AppIcon.swift */,
 				C453B0C028E285220042B671 /* PreferenceKey.swift */,
 				C453B0C128E285220042B671 /* Tab.swift */,
-				C4E54C1128E2E4C300C1B9CA /* Themes.swift */,
+				C4E54C1128E2E4C300C1B9CA /* Theme.swift */,
+				C40E0E4828E3FDE400F33F21 /* AppIcon.swift */,
+				C40E0E4628E3FDBD00F33F21 /* HeartColor.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -230,7 +237,6 @@
 			children = (
 				C453B0CC28E285230042B671 /* ContentView.swift */,
 				C453B0CB28E285230042B671 /* MyTabView.swift */,
-				C4E54C1828E3194A00C1B9CA /* testView.swift */,
 			);
 			path = Nav;
 			sourceTree = "<group>";
@@ -322,15 +328,16 @@
 			files = (
 				C4D50A9728E29AE6003BE66B /* README.md in Resources */,
 				C4D8DDD328E344B900436B70 /* heart5.json in Resources */,
+				C40E0E4B28E44AB100F33F21 /* arrow.json in Resources */,
 				C453B08E28E284A80042B671 /* Preview Assets.xcassets in Resources */,
 				C4D8DDD028E344B900436B70 /* heart3.json in Resources */,
 				C4D8DDD128E344B900436B70 /* heart4.json in Resources */,
 				C453B0D428E285230042B671 /* write.json in Resources */,
 				C453B0D328E285230042B671 /* mmDiaryStore.storekit in Resources */,
-				C4E54C1B28E3225D00C1B9CA /* heart1.json in Resources */,
 				C453B0D528E285230042B671 /* hi.json in Resources */,
 				C453B08A28E284A80042B671 /* Assets.xcassets in Resources */,
 				C4D8DDD228E344B900436B70 /* heart2.json in Resources */,
+				C40E0E4D28E44F6A00F33F21 /* listening-music.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -353,22 +360,23 @@
 				C453B08628E284A50042B671 /* mwDiary.xcdatamodeld in Sources */,
 				C453B0DA28E285230042B671 /* ToastAlertView.swift in Sources */,
 				C453B0E528E285230042B671 /* Date+.swift in Sources */,
-				C453B0DE28E285230042B671 /* AppIcon.swift in Sources */,
 				C453B08128E284A50042B671 /* mwDiaryApp.swift in Sources */,
 				C453B0E928E285230042B671 /* AppearanceView.swift in Sources */,
 				C453B0E128E285230042B671 /* MyDefaultValue.swift in Sources */,
 				C453B0E728E285230042B671 /* MyTabView.swift in Sources */,
+				C40E0E4728E3FDBD00F33F21 /* HeartColor.swift in Sources */,
 				C453B0E628E285230042B671 /* DiaryViewModel.swift in Sources */,
 				C453B0ED28E285230042B671 /* SettingView.swift in Sources */,
 				C453B0E328E285230042B671 /* MyFormatter.swift in Sources */,
 				C453B0D928E285230042B671 /* DiaryListView.swift in Sources */,
 				C453B0DD28E285230042B671 /* DiaryEditView.swift in Sources */,
-				C4E54C1228E2E4C300C1B9CA /* Themes.swift in Sources */,
+				C4E54C1228E2E4C300C1B9CA /* Theme.swift in Sources */,
 				C453B0E828E285230042B671 /* ContentView.swift in Sources */,
 				C453B0EB28E285230042B671 /* JournalView.swift in Sources */,
 				C453B0DF28E285230042B671 /* PreferenceKey.swift in Sources */,
 				C4E54C1928E3194A00C1B9CA /* testView.swift in Sources */,
 				C453B0DC28E285230042B671 /* DiaryCardLayOutView.swift in Sources */,
+				C40E0E4928E3FDE400F33F21 /* AppIcon.swift in Sources */,
 				C453B0E028E285230042B671 /* Tab.swift in Sources */,
 				C453B0DB28E285230042B671 /* MyDatePicker.swift in Sources */,
 			);

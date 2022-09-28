@@ -8,13 +8,14 @@
 import SwiftUI
 
 struct FavView: View {
-    
+    //MARK: - Appearance
+    @AppStorage("heartColor") var appHeartColor:HeartColorType = .yellow
     //MARK: - State
     @State var editTitle = ""
     @State var editText = ""
     @State var showEditView = false
     @State var showDeleteAlert:Bool = false
-    private var navTitle = dateFormatterMMMM.string(from: Date())
+    private var navTitle = "Favourates"
     @State var isShowFavToastAlert = false
     @State var isShowDeleteToastAlert = false
     //MARK: - Search
@@ -30,7 +31,8 @@ struct FavView: View {
             return diaryvm.savedEntities.filter { $0.is_fav == true && $0.title!.localizedCaseInsensitiveContains(searchStr) }
         }
     }
-    
+    //MARK: - search
+    @State var isSearchingValue = false
     //MARK: - lottie
     @State var isShowAnime = false
     
@@ -38,6 +40,7 @@ struct FavView: View {
     var body: some View {
         ZStack{
             NavigationView {
+                VStack{
                 DiaryListView(editTitle: $editTitle,
                               editText: $editText,
                               showEditView: $showEditView,
@@ -46,8 +49,15 @@ struct FavView: View {
                               isShowFavToastAlert: $isShowFavToastAlert,
                               isShowDeleteToastAlert: $isShowDeleteToastAlert,
                               filteredDiary: filteredDiary)
+                .onPreferenceChange(IsSearchingPreferenceKey.self) { value in
+                    withAnimation (.easeInOut){
+                        self.isSearchingValue = value
+                    }
+                }
+                Rectangle().foregroundColor(.clear).frame(height: 40)
+            }
                 //MARK: -搜索
-                    .searchable(text: $searchStr)
+                    .searchable(text: $searchStr,prompt: "")
                 //TODO: - 搜索后保留结果 取消focus
                 //                .onSubmit(of: .search) { print("hello") }
                 //MARK: - listStyle NavTitle
@@ -56,28 +66,31 @@ struct FavView: View {
             .navigationViewStyle(StackNavigationViewStyle())
             
             //MARK: - toolBar
-            Button {
-                isShowAnime = true
-                DispatchQueue.main.asyncAfter(deadline: .now() + 3,execute: {
-                    withAnimation (.easeInOut(duration: 0.2)){
-                        isShowAnime = false
+            if !isSearchingValue {
+                Button {
+                    isShowAnime = true
+                    DispatchQueue.main.asyncAfter(deadline: .now() + 3,execute: {
+                        withAnimation (.easeInOut(duration: 0.2)){
+                            isShowAnime = false
+                        }
+                    })
+                } label: {
+                    VStack{
+                        Image(systemName: "heart.fill")
+                            .font(filteredDiary==[] ? .title:.headline)
                     }
-                })
-            } label: {
-                VStack{
-                    Image(systemName: "heart.fill").font(filteredDiary==[] ? .title:.headline)
                 }
+                .frame(width: 50, height: 50)
+                .frame(maxWidth:.infinity,maxHeight: .infinity,alignment:filteredDiary==[] ? .center : .topTrailing)
+                .padding(.trailing,10)
+                .tint(appHeartColor.SwiftUiColor)
             }
-            .frame(width: 50, height: 50)
-            .frame(maxWidth:.infinity,maxHeight: .infinity,alignment:filteredDiary==[] ? .center : .topTrailing)
-            .padding(.trailing,10)
-            .tint(.primary)
             //MARK: - Lottie
             if isShowAnime {
-                MyLottieVIew(animationName: "heart1", isPlaying: $isShowAnime)
-                    .frame(width: 100,height: 100)
+                MyLottieVIew(animationName: "heart5", isPlaying: $isShowAnime)
+                    .frame(width: 80,height: 80)
+                    .offset(x:-5)
             }
-            
             
             //MARK: - 弹窗
             if isShowFavToastAlert {
@@ -87,10 +100,9 @@ struct FavView: View {
                     ToastAlertView(icon: "heart.slash",text: "Remove from Favs").zIndex(1)
                 }
             }
+            
             if isShowDeleteToastAlert {
-                if selectEntity?.is_fav == true {
                     ToastAlertView(icon: "",text: "Diary deleted").zIndex(1)
-                }
             }
         }
     }

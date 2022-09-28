@@ -8,7 +8,8 @@
 import SwiftUI
 
 struct DiaryCardLayOutView: View {
-    
+    //MARK: - Appearance
+    @AppStorage("heartColor") var appHeartColor:HeartColorType = .yellow
     //    @ObservedObject var diary:DiaryEntity
     
     var e_create_date:Date = Date()
@@ -45,16 +46,16 @@ struct DiaryCardLayOutView: View {
             .foregroundColor(.primary)
             .frame(maxWidth: .infinity)
             .padding(.vertical,6)
-            .background {Color(.systemBackground)}
+            .background (Color(.systemBackground))
             .overlay(
                 RoundedRectangle(cornerRadius: 11)
                     .stroke(Color.primary,lineWidth: 3)
             )
             .cornerRadius(10)
         }
-        .background(content: {
+        .background(
             Color.primary
-        })
+        )
         .frame(width: 48)
         .cornerRadius(12)
     }
@@ -76,7 +77,7 @@ struct DiaryCardLayOutView: View {
                     .font(.headline)
                     .symbolVariant(.fill)
                     .frame(maxWidth: .infinity,alignment: .trailing)
-                    .foregroundColor(e_isFav ? Color(.systemYellow): .clear)
+                    .foregroundColor(e_isFav ? appHeartColor.SwiftUiColor : .clear)
                 Text(dateFormatterHHmm.string(from: e_modified_date ))
                     .font(.footnote)
                     .frame(maxWidth: .infinity,alignment: .trailing)
@@ -148,7 +149,7 @@ struct DiaryCardLayOutView: View {
                     .font(.headline)
                     .symbolVariant(.fill)
                     .frame(maxWidth: .infinity,alignment: .trailing)
-                    .foregroundColor(e_isFav ? Color(.systemYellow): .clear)
+                    .foregroundColor(e_isFav ? appHeartColor.SwiftUiColor: .clear)
                 Text(dateFormatterHHmm.string(from: e_modified_date ))
                     .font(.footnote)
                     .frame(maxWidth: .infinity,alignment: .trailing)
