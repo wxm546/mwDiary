@@ -12,7 +12,7 @@ import SwiftUI
 //MARK: - JournalView
 struct JournalView: View {
     
-    //MARK: - State
+    @EnvironmentObject var diaryvm:DiaryViewMode
     @State var editTitle = ""
     @State var editText = ""
     @State var showEditView = false
@@ -20,9 +20,8 @@ struct JournalView: View {
     private var navTitle = "Journals"
     @State var isShowFavToastAlert = false
     @State var isShowDeleteToastAlert = false
-    //MARK: - ViewModel
-    @EnvironmentObject var diaryvm:DiaryViewMode
     @State var selectEntity:DiaryEntity? = nil
+    
     //MARK: - filteredDiary
     var filteredDiary: [DiaryEntity] {
         if searchStr.isEmpty {
@@ -40,7 +39,6 @@ struct JournalView: View {
     @State var searchDate:Date = Date()
     //MARK: - DatePicker
     @State var isShowDatePicker = false
-    //MARK: - test
     
 
     
@@ -63,7 +61,6 @@ struct JournalView: View {
                             self.isSearchingValue = value
                         }
                     }
-                    Rectangle().foregroundColor(.clear).frame(height: 40)
                 }
                 .searchable(text:$searchStr,prompt: "")
                 .navigationTitle(navTitle)

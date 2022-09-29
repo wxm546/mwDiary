@@ -10,7 +10,7 @@ import SwiftUI
 //MARK: - DiaryView
 struct DiaryView: View {
     
-    //MARK: - State
+    @EnvironmentObject var diaryvm:DiaryViewMode
     @State var editTitle = ""
     @State var editText = ""
     @State var showEditView = false
@@ -18,9 +18,8 @@ struct DiaryView: View {
     private var navTitle = dateFormatterMMMM.string(from: Date())
     @State var isShowFavToastAlert = false
     @State var isShowDeleteToastAlert = false
-    //MARK: - ViewModel
-    @EnvironmentObject var diaryvm:DiaryViewMode
     @State var selectEntity:DiaryEntity? = nil
+    
     //MARK: - filteredDiary
     var filteredDiary: [DiaryEntity] {
         if navTitle.isEmpty {
@@ -30,7 +29,8 @@ struct DiaryView: View {
         }
     }
     
-    //MARK: - ViewBody
+    
+
     var body: some View {
         ZStack{
             NavigationView{
@@ -43,7 +43,8 @@ struct DiaryView: View {
                                   isShowFavToastAlert: $isShowFavToastAlert,
                                   isShowDeleteToastAlert: $isShowDeleteToastAlert,
                                   filteredDiary: filteredDiary)
-                    Rectangle().foregroundColor(.clear).frame(height: 40)
+//                    .frame(height: 2000)
+
                 }
                     .navigationTitle(navTitle)
                     //MARK: - 下拉编辑
@@ -81,7 +82,6 @@ struct DiaryView: View {
                     ToastAlertView(icon: "",text: "Diary deleted").zIndex(1)
             }
         }//ZStack
-        
         .tint(Color(.label))
     }//View
 }

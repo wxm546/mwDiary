@@ -20,16 +20,15 @@ struct AppearanceListCell: View {
     }
 }
 
-
 struct AppearanceView: View {
-
-
-    @EnvironmentObject var diaryvm:DiaryViewMode
+    
     @AppStorage("appTheme") var appTheme:ThemeType = .Automatic
     @AppStorage("heartColor") var appHeartColor:HeartColorType = .yellow
     @AppStorage("smallTitle") var smallTitle:Bool = false
-    private var navTitle = "Appearance"
+    @AppStorage("cardLayout") var cardLayout:Int = 2
+    @EnvironmentObject var diaryvm:DiaryViewMode
     
+    private var navTitle = "Appearance"
     
     private let icons:[AppIcon] = [
         AppIcon(iconName: nil, logoName: "icon 1"),
@@ -43,7 +42,7 @@ struct AppearanceView: View {
         Theme(theme: .Automatic),
         Theme(theme: .Light),
         Theme(theme: .Dark),
-//        Theme(theme: .rainbow)
+        //        Theme(theme: .rainbow)
     ]
     
     @State var isplay = false
@@ -54,13 +53,19 @@ struct AppearanceView: View {
                                             HeartColor(color: .cyan)
     ]
     
+    
+    
+    
+    
+    
+    
     var body: some View {
         
         NavigationView {
             
             List{
                 Group{
-                    //TODO: - change ColorTheme
+                    //MARK: - change ColorTheme
                     Section {
                         VStack(alignment:.leading,spacing: 0){
                             ForEach(themes) { theme in
@@ -87,9 +92,9 @@ struct AppearanceView: View {
                     } header: {
                         Text("THEMES")
                     }
-                    .listRowBackground(appTheme.backColor)
-                    //MARK: - change icon
+                    //.listRowBackground(appTheme.backColor)
                     
+                    //MARK: - change icon
                     Section{
                         ScrollView(.horizontal){
                             HStack{
@@ -109,8 +114,7 @@ struct AppearanceView: View {
                     } header: {
                         Text("APP ICON")
                     }
-                    .listRowBackground(appTheme.backColor)
-                    
+                    //.listRowBackground(appTheme.backColor)
                     
                     //MARK: - change favcolor
                     Section{
@@ -139,43 +143,48 @@ struct AppearanceView: View {
                             }
                         }
                     } header: {
-                        Text("Heart Color")
+                        Text("Favourite Color")
                     }
-                    .listRowBackground(appTheme.backColor)
+                    //                    .listRowBackground(appTheme.backColor)
                     
+                }
                     
-                    //TODO: - change LAYOUT
+                Group{
+                    
+                    //MARK: - change LAYOUT
                     Section{
                         VStack(spacing:18){
-                            DiaryCardLayOutView()
+                            ForEach(1...6, id: \.self) { i in
+                                DiaryCardLayOutView(e_isFav:i == cardLayout ? true : false,layoutIndex:i)
+                                    .onTapGesture {
+                                        cardLayout = i
+                                    }
+                            }
                         }
                     } header: {
                         Text("LAYOUT")
                     }
-                    .listRowBackground(appTheme.backColor)
+                    //                    .listRowBackground(appTheme.backColor)
                     
                     Section{
                         //TODO: - change font
                         
-                        //TODO: - new jour title
                         
                         //MARK: - change small title
                         Toggle(isOn: $smallTitle) {
                             AppearanceListCell(title: "Small Title", description: "Title style above every page")
-                            
                         }
                         .tint(appHeartColor.SwiftUiColor)
-                        .safeAreaInset(edge: .bottom, content: {Color.clear.frame(height: 50)})
                     } header: {
                         Text("MORE")
                     }
-                    .listRowBackground(appTheme.backColor)
-                    
+                    //                    .listRowBackground(appTheme.backColor)
+                    VStack{}.frame(height:45)
+                    //                        .listRowBackground(appTheme.backColor)
                 }
             }//list
             .listStyle(.plain)
             .background(appTheme.backColor)
-            
             
             .navigationTitle(navTitle)
             .navigationBarTitleDisplayMode(.inline)
@@ -191,7 +200,7 @@ struct AppearanceView_Previews: PreviewProvider {
     static var previews: some View {
         AppearanceView()
             .environmentObject(DiaryViewMode())
-//            .preferredColorScheme(.dark)
+        //            .preferredColorScheme(.dark)
     }
 }
 

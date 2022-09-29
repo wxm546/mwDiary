@@ -8,9 +8,9 @@
 import SwiftUI
 
 struct FavView: View {
-    //MARK: - Appearance
+
     @AppStorage("heartColor") var appHeartColor:HeartColorType = .yellow
-    //MARK: - State
+    @EnvironmentObject var diaryvm:DiaryViewMode
     @State var editTitle = ""
     @State var editText = ""
     @State var showEditView = false
@@ -18,11 +18,8 @@ struct FavView: View {
     private var navTitle = "Favourates"
     @State var isShowFavToastAlert = false
     @State var isShowDeleteToastAlert = false
-    //MARK: - Search
-    @State var searchStr = ""
-    //MARK: - ViewModel
-    @EnvironmentObject var diaryvm:DiaryViewMode
     @State var selectEntity:DiaryEntity? = nil
+    
     //MARK: - filteredDiary
     var filteredDiary: [DiaryEntity] {
         if searchStr.isEmpty {
@@ -32,6 +29,7 @@ struct FavView: View {
         }
     }
     //MARK: - search
+    @State var searchStr = ""
     @State var isSearchingValue = false
     //MARK: - lottie
     @State var isShowAnime = false
@@ -54,7 +52,6 @@ struct FavView: View {
                         self.isSearchingValue = value
                     }
                 }
-                Rectangle().foregroundColor(.clear).frame(height: 40)
             }
                 //MARK: -搜索
                     .searchable(text: $searchStr,prompt: "")

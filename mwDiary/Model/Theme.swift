@@ -86,13 +86,13 @@ enum ThemeType:String{
         get {
             switch self {
             case .Automatic:
-                return Color(.systemBackground)
+                return Color("texteditorback")
             case .Light:
-                return Color(.systemBackground)
+                return Color("texteditorback")
             case .Dark:
-                return Color(.systemBackground)
+                return Color("texteditorback")
             case .rainbow:
-                return Color(.systemBlue)
+                return Color("texteditorback")
             }
         }
     }
@@ -100,13 +100,27 @@ enum ThemeType:String{
         get {
             switch self {
             case .Automatic:
-                return Color(.secondarySystemBackground)
+                return Color("upcalback")
             case .Light:
-                return Color(.secondarySystemBackground)
+                return Color("upcalback")
             case .Dark:
-                return Color(.secondarySystemBackground)
+                return Color("upcalback")
             case .rainbow:
-                return Color(.systemBlue)
+                return Color("upcalback")
+            }
+        }
+    }
+    var backColor3:Color {
+        get {
+            switch self {
+            case .Automatic:
+                return Color("downcalback")
+            case .Light:
+                return Color("downcalback")
+            case .Dark:
+                return Color("downcalback")
+            case .rainbow:
+                return Color("downcalback")
             }
         }
     }

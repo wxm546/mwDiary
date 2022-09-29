@@ -14,7 +14,7 @@ struct ContentView: View {
     @State var selectView:Tab = .diary
 
     var body: some View {
-        ZStack(alignment: .bottom){
+        ZStack{
             Group{
                 switch selectView{
                 case .diary:
@@ -28,10 +28,13 @@ struct ContentView: View {
                     SettingView()
                 }
             }
+            .zIndex(0)
+//            .safeAreaInset(edge: .bottom, spacing: 50) {Color.white.frame(height: 100)}
+//            .ignoresSafeArea()
             .preferredColorScheme(appTheme.SystemColorScheme)
             .frame(maxWidth: .infinity, maxHeight: .infinity)
-            MyTabView(selectTab: $selectTab,selectView: $selectView)
-            
+            MyTabView(selectTab: $selectTab,selectView: $selectView).zIndex(1)
+                
         }
         
     }

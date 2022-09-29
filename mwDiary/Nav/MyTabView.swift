@@ -47,8 +47,6 @@ struct MyTabView: View {
                             .frame(height: 40)
                     })
                 })
-                
-                
                 .buttonStyle(BlankButtonStyle())
                 //button
                 //      .padding(.top,14)
@@ -73,10 +71,10 @@ struct MyTabView: View {
         //背景板颜色
         //.background(.ultraThinMaterial)
         .background(.background)
+        
         //放置最底下
         .frame(maxHeight: .infinity,alignment: .bottom)
-        .ignoresSafeArea()
-        
+        .ignoresSafeArea(.all)
     }
 }
 

@@ -9,12 +9,9 @@ import SwiftUI
 
 
 struct DiaryListView: View {
-    //MARK: - Appearance
+
     @AppStorage("smallTitle") var smallTitle:Bool = false
-    //MARK: - ViewModel
     @EnvironmentObject var diaryvm:DiaryViewMode
-    
-    @Environment(\.isSearching) var isSearching
     @Binding var editTitle:String
     @Binding var editText:String
     @Binding var showEditView:Bool
@@ -22,16 +19,15 @@ struct DiaryListView: View {
     @Binding var selectEntity:DiaryEntity?
     @Binding var isShowFavToastAlert:Bool
     @Binding var isShowDeleteToastAlert:Bool
-    //    @State private var timer: Timer?
+    @Environment(\.isSearching) var isSearching
     
     var filteredDiary : [DiaryEntity]
     
     var body: some View{
-        
         List{
             ForEach(filteredDiary) { entity in
                 DiaryCardView(diary: entity)
-                //MARK: - 设置边距
+                //MARK: - 设置卡片边距
                     .padding(.vertical,10)
                     .padding(.horizontal,18)
                 //MARK: - 点击编辑
@@ -43,8 +39,7 @@ struct DiaryListView: View {
                     }
                 //MARK: - 滑动菜单
                     .swipeActions(edge: .trailing, allowsFullSwipe: false, content: {
-                        
-                        //MARK: "delete"
+                        //MARK: deleteButton
                         Button {
                             selectEntity = entity
                             showDeleteAlert.toggle()
@@ -52,8 +47,7 @@ struct DiaryListView: View {
                             Image(systemName: "xmark").font(.title)
                         }
                         .tint(Color(.systemRed))
-                        
-                        //MARK: "Fav"
+                        //MARK: FavButton
                         Button {
                             selectEntity = entity
                             withAnimation (.easeOut(duration: 1.1)){
@@ -72,8 +66,7 @@ struct DiaryListView: View {
                         .tint(Color(entity.is_fav ? .systemGray2 : .systemYellow))
                     })
                     .swipeActions(edge: .leading, allowsFullSwipe: true, content: {
-                        
-                        //MARK: "Edit"
+                        //MARK: EditButton
                         Button{
                             showEditView = true
                             selectEntity = entity
@@ -84,20 +77,19 @@ struct DiaryListView: View {
                             
                         }
                         .tint(Color(.systemBlue))})
-                
             }//foreach
-            
             .listRowSeparator(.hidden)
             .listRowInsets(EdgeInsets())
-                    }//list
-            //MARK: - searchpreference
-
+            //在iOS15中 safe问题解决方法
+            VStack{
+            }.frame(height: 45)
+                .listRowSeparator(.hidden)
+                .listRowInsets(EdgeInsets())
+        }//list
         .listStyle(.plain)
         .preference(key: IsSearchingPreferenceKey.self, value: isSearching)
-        //        .scrollIndicators(.automatic)
-        .safeAreaInset(edge: .bottom, content: {Color.clear.frame(height: 50)})
         .navigationBarTitleDisplayMode(smallTitle ? .inline:.large)
-        //MARK: - 删除提醒
+        //MARK: - Delete Alert
         .confirmationDialog(Text("You are deleting this journal:\n\(selectEntity?.title ?? "no title")"), isPresented: $showDeleteAlert, titleVisibility: .visible, actions: {
             Button("delete",role: .destructive){
                 withAnimation(.easeInOut(duration: 0.5)){
@@ -111,7 +103,7 @@ struct DiaryListView: View {
                 })
             }
         }, message: {Text("Are you sure?")})
-        //MARK: - 编辑界面
+        //MARK: - EditView
         .sheet(isPresented: $showEditView,onDismiss: { selectEntity = nil }, content: {
             DiaryEditView(editTitle: $editTitle, editText: $editText, showEditView: $showEditView, selectEntity: $selectEntity)
         })

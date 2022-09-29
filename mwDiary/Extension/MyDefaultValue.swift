@@ -7,8 +7,8 @@
 
 import Foundation
 
-public let defaultTitle = "My daily mood"
-public let defaultBody = "hello~"
+//public let defaultTitle = "My daily mood"
+//public let defaultBody = "hello~"
 
 //public let testDiary:DiaryEntity = {
 //    let a = DiaryEntity()

@@ -12,14 +12,10 @@ struct MyDatePicker: View {
     public let months:[String] = ["January", "February", "March", "April", "May", "June",
                                     "July", "August", "September", "October", "November", "December"]
     
-    
     @State private var selectMon:String =  Date().getMonthName()
-    
     @State private var selectMonInt:Int = 0
-    
     @State private var selectYear:Int = (Int(dateFormatteryyyy.string(from: Date())) ?? 0)
-    
-    
+
     @Binding var selectDate:Date
     @Binding var isShowDatePicker:Bool
     @Binding var searchStr:String

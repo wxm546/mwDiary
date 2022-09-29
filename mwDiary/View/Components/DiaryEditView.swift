@@ -8,18 +8,19 @@
 import SwiftUI
 
 struct DiaryEditView: View {
-    
-    @EnvironmentObject var diaryvm:DiaryViewMode
-    
     @State private var beginEditTitle = false
     
+    @EnvironmentObject var diaryvm:DiaryViewMode
+
     @Binding var editTitle:String
     @Binding var editText:String
     @Binding var showEditView:Bool
-    
     @Binding var selectEntity:DiaryEntity?
     
     @FocusState var isInputActive: Bool
+    
+    @AppStorage("defaultTitle") var defaultTitle = "My daily mood"
+    @AppStorage("defaultBody") var defaultBody = ""
     
     
     var body: some View{
