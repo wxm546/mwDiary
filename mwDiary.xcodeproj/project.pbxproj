@@ -11,6 +11,7 @@
 		C40E0E4928E3FDE400F33F21 /* AppIcon.swift in Sources */ = {isa = PBXBuildFile; fileRef = C40E0E4828E3FDE400F33F21 /* AppIcon.swift */; };
 		C40E0E4B28E44AB100F33F21 /* arrow.json in Resources */ = {isa = PBXBuildFile; fileRef = C40E0E4A28E44AB100F33F21 /* arrow.json */; };
 		C40E0E4D28E44F6A00F33F21 /* listening-music.json in Resources */ = {isa = PBXBuildFile; fileRef = C40E0E4C28E44F6A00F33F21 /* listening-music.json */; };
+		C40E0E4F28E567DA00F33F21 /* DefaultDiaryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C40E0E4E28E567DA00F33F21 /* DefaultDiaryView.swift */; };
 		C453B08128E284A50042B671 /* mwDiaryApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = C453B08028E284A50042B671 /* mwDiaryApp.swift */; };
 		C453B08628E284A50042B671 /* mwDiary.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = C453B08428E284A50042B671 /* mwDiary.xcdatamodeld */; };
 		C453B08A28E284A80042B671 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C453B08928E284A80042B671 /* Assets.xcassets */; };
@@ -58,6 +59,7 @@
 		C40E0E4828E3FDE400F33F21 /* AppIcon.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppIcon.swift; sourceTree = "<group>"; };
 		C40E0E4A28E44AB100F33F21 /* arrow.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = arrow.json; sourceTree = "<group>"; };
 		C40E0E4C28E44F6A00F33F21 /* listening-music.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "listening-music.json"; sourceTree = "<group>"; };
+		C40E0E4E28E567DA00F33F21 /* DefaultDiaryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultDiaryView.swift; sourceTree = "<group>"; };
 		C453B07D28E284A50042B671 /* mwDiary.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = mwDiary.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C453B08028E284A50042B671 /* mwDiaryApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = mwDiaryApp.swift; sourceTree = "<group>"; };
 		C453B08528E284A50042B671 /* mwDiary.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = mwDiary.xcdatamodel; sourceTree = "<group>"; };
@@ -193,7 +195,6 @@
 				C453B0BA28E285220042B671 /* ToastAlertView.swift */,
 				C453B0BB28E285220042B671 /* MyDatePicker.swift */,
 				C453B0B728E285220042B671 /* MyTextFieldWithUIKit.swift */,
-				C453B0BD28E285220042B671 /* DiaryEditView.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -247,8 +248,10 @@
 				C453B0CF28E285230042B671 /* DiaryView.swift */,
 				C453B0D028E285230042B671 /* JournalView.swift */,
 				C453B0D128E285230042B671 /* FavView.swift */,
+				C453B0BD28E285220042B671 /* DiaryEditView.swift */,
 				C453B0D228E285230042B671 /* SettingView.swift */,
 				C453B0CE28E285230042B671 /* AppearanceView.swift */,
+				C40E0E4E28E567DA00F33F21 /* DefaultDiaryView.swift */,
 				C453B0B628E285220042B671 /* Components */,
 			);
 			path = View;
@@ -358,6 +361,7 @@
 				C453B0EC28E285230042B671 /* FavView.swift in Sources */,
 				C4E54C0F28E2E41600C1B9CA /* BlankButtonStyle.swift in Sources */,
 				C453B08628E284A50042B671 /* mwDiary.xcdatamodeld in Sources */,
+				C40E0E4F28E567DA00F33F21 /* DefaultDiaryView.swift in Sources */,
 				C453B0DA28E285230042B671 /* ToastAlertView.swift in Sources */,
 				C453B0E528E285230042B671 /* Date+.swift in Sources */,
 				C453B08128E284A50042B671 /* mwDiaryApp.swift in Sources */,
@@ -524,7 +528,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = "@executable_path/Frameworks";
 				"LD_RUNPATH_SEARCH_PATHS[sdk=macosx*]" = "@executable_path/../Frameworks";
-				MARKETING_VERSION = 0.8;
+				MARKETING_VERSION = 0.8.2;
 				PRODUCT_BUNDLE_IDENTIFIER = wxm.mwDiary;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = iphoneos;
@@ -567,7 +571,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = "@executable_path/Frameworks";
 				"LD_RUNPATH_SEARCH_PATHS[sdk=macosx*]" = "@executable_path/../Frameworks";
-				MARKETING_VERSION = 0.8;
+				MARKETING_VERSION = 0.8.2;
 				PRODUCT_BUNDLE_IDENTIFIER = wxm.mwDiary;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = iphoneos;

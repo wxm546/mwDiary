@@ -79,6 +79,21 @@ enum ThemeType:String{
             }
         }
     }
+    var fontColor2:Color {
+        get {
+            switch self {
+            case .Automatic:
+                return Color("texteditorback")
+            case .Light:
+                return Color("texteditorback")
+            case .Dark:
+                return Color("texteditorback")
+            case .rainbow:
+                return Color("texteditorback")
+            }
+        }
+    }
+    
     
     //systemBackground secondarySystemBackground tertiarySystemBackground
     //https://sarunw.com/posts/dark-color-cheat-sheet/

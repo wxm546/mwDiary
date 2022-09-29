@@ -17,6 +17,10 @@ struct SettingView: View {
     
     @AppStorage("defaultTitle") var defaultTitle = "My daily mood"
     @AppStorage("defaultBody") var defaultBody = ""
+    @State var editTitle:String = ""
+    @State var editText:String = ""
+    
+    
     private var naviTitle = "Setting"
     
     var body: some View {
@@ -39,15 +43,15 @@ struct SettingView: View {
                                 .font(.subheadline)
                                 .frame(height: 33)
                         }
-                        
-                        Toggle(isOn: $isICloud) {
-                            Label("iCloud Sync", systemImage: "icloud.circle.fill")
-                                .font(.subheadline)
-                                .frame(height: 33)
-                        }.tint(appHeartColor.SwiftUiColor)
-                        
-                        //TODO: - defaultTitle
-                        
+                       
+                        //TODO: - icloud
+//                        Toggle(isOn: $isICloud) {
+//                            Label("iCloud Sync", systemImage: "icloud.circle.fill")
+//                                .font(.subheadline)
+//                                .frame(height: 33)
+//                        }
+//                        .tint(appHeartColor.SwiftUiColor)
+                   
                         
                     } header:{
                         Text("GENERAL")
@@ -59,7 +63,34 @@ struct SettingView: View {
 //                    } header:{
 //                    Text("PREMIUM")
 //                }
+                
+                
+                //MARK: - defaultTitle
+                Section {
+                    NavigationLink {
+                        DefaultDiaryView(editTitle: $editTitle, editText: $editText)
+                    } label: {
+                        Label("Default Diary", systemImage: "doc.text")
+                            .font(.subheadline)
+                            .frame(height: 33)
+//                            .onTapGesture {
+//                                
+//                            }
+                    }.onAppear {
+                        if defaultTitle != "My daily mood" && defaultTitle != "" {
+                            editTitle = defaultTitle
+                        }
+                        if defaultBody != "" {
+                            editText = defaultBody
+                        }
+                    }
                     
+                    
+                    
+                } header: {
+                    Text("TEMPLATE")
+                }
+
                     
                     Section{
                         Link(destination: URL(string: "mailto:wxm546@outlook.com")!, label: {Label("Contact", systemImage: "link.circle.fill")})
@@ -96,7 +127,7 @@ struct SettingView: View {
 struct SettingView_Previews: PreviewProvider {
     static var previews: some View {
         SettingView()
-            .preferredColorScheme(.dark)
+//            .preferredColorScheme(.dark)
     }
 }
 

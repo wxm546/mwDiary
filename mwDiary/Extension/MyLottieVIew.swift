@@ -13,6 +13,7 @@ struct MyLottieVIew : UIViewRepresentable {
     
     var animationName:String
     @Binding var isPlaying : Bool
+    var isLoop:Bool = false
     
     func makeUIView(context: Context) -> some UIView {
         let view = UIView(frame: .zero)
@@ -25,6 +26,9 @@ struct MyLottieVIew : UIViewRepresentable {
             if view.tag == 1009,let lottieView = view as? AnimationView{
                 if isPlaying{
                     lottieView.play()
+                    if isLoop {
+                        lottieView.loopMode = .loop
+                    }
                 }else{
                     lottieView.pause()
                 }

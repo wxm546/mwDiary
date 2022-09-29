@@ -81,7 +81,7 @@ struct AppearanceView: View {
                                 }
                                 .frame(height: 50)
                                 //用于点击
-                                .background(appTheme.backColor)
+                                
                                 .onTapGesture {
                                     withAnimation(.easeOut) {
                                         appTheme = theme.theme
@@ -184,7 +184,8 @@ struct AppearanceView: View {
                 }
             }//list
             .listStyle(.plain)
-            .background(appTheme.backColor)
+//            .scrollIndicators()
+//            .background(Color.blue)
             
             .navigationTitle(navTitle)
             .navigationBarTitleDisplayMode(.inline)
@@ -200,7 +201,7 @@ struct AppearanceView_Previews: PreviewProvider {
     static var previews: some View {
         AppearanceView()
             .environmentObject(DiaryViewMode())
-        //            .preferredColorScheme(.dark)
+                    .preferredColorScheme(.dark)
     }
 }
 

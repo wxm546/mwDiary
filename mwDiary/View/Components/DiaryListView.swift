@@ -9,16 +9,20 @@ import SwiftUI
 
 
 struct DiaryListView: View {
-
+    
     @AppStorage("smallTitle") var smallTitle:Bool = false
     @EnvironmentObject var diaryvm:DiaryViewMode
     @Binding var editTitle:String
     @Binding var editText:String
     @Binding var showEditView:Bool
     @Binding var showDeleteAlert:Bool
+    @State var ShowSaveAlert:Bool = false
     @Binding var selectEntity:DiaryEntity?
     @Binding var isShowFavToastAlert:Bool
     @Binding var isShowDeleteToastAlert:Bool
+    @AppStorage("defaultTitle") var defaultTitle = "My daily mood"
+    @AppStorage("defaultBody") var defaultBody = ""
+    
     @Environment(\.isSearching) var isSearching
     
     var filteredDiary : [DiaryEntity]
@@ -93,7 +97,7 @@ struct DiaryListView: View {
         .confirmationDialog(Text("You are deleting this journal:\n\(selectEntity?.title ?? "no title")"), isPresented: $showDeleteAlert, titleVisibility: .visible, actions: {
             Button("delete",role: .destructive){
                 withAnimation(.easeInOut(duration: 0.5)){
-                diaryvm.deleteDiaryWithEntity(entity: selectEntity!)}
+                    diaryvm.deleteDiaryWithEntity(entity: selectEntity!)}
                 selectEntity = nil
                 isShowDeleteToastAlert = true
                 DispatchQueue.main.asyncAfter(deadline: .now() + 1.5,execute: {
@@ -103,11 +107,46 @@ struct DiaryListView: View {
                 })
             }
         }, message: {Text("Are you sure?")})
+        //MARK: - 保存提示
+        .confirmationDialog(Text("Your diary Modified"), isPresented: $ShowSaveAlert, titleVisibility: .visible, actions: {
+            Button("save",role: .destructive){
+                withAnimation(.easeInOut(duration: 0.5)){
+                    if selectEntity == nil {
+                        diaryvm.addDiary(titlestr: editTitle.isEmpty ? defaultTitle : editTitle, bodystr: editText.isEmpty ? defaultBody : editText)
+                    } else {
+                        diaryvm.updateDiary(titlestr: editTitle.isEmpty ? defaultTitle : editTitle, bodystr: editText.isEmpty ? "" : editText, entity: selectEntity)
+                    }
+                    editTitle = ""
+                    editText = ""
+                    selectEntity = nil
+                }
+            }
+            Button("dismiss", role: .cancel) {
+                editTitle = ""
+                editText = ""
+                selectEntity = nil
+            }
+            
+        }, message: {Text("Save the Modified date?")})
         //MARK: - EditView
-        .sheet(isPresented: $showEditView,onDismiss: { selectEntity = nil }, content: {
+        .sheet(isPresented: $showEditView,onDismiss: {
+            if selectEntity == nil  {
+                if editText == "" && editTitle == "" {
+                } else {
+                    ShowSaveAlert = true
+                }
+            } else if selectEntity != nil && selectEntity?.title == editTitle && selectEntity?.body == editText {
+            } else {
+                ShowSaveAlert = true
+            }
+        }, content: {
             DiaryEditView(editTitle: $editTitle, editText: $editText, showEditView: $showEditView, selectEntity: $selectEntity)
         })
+        
     }
 }
+
+
+
 
 
