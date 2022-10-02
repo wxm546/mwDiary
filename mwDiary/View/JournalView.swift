@@ -7,8 +7,6 @@
 
 import SwiftUI
 
-
-
 //MARK: - JournalView
 struct JournalView: View {
     
@@ -41,7 +39,6 @@ struct JournalView: View {
     @State var isShowDatePicker = false
     
 
-    
     var body: some View {
         ZStack {
             
@@ -102,8 +99,6 @@ struct JournalView: View {
                     .zIndex(1)
               
             }
-//            Text(dateFormatteryyyyMMMM.string(from: searchDate))
-            
         }
     }
 }
