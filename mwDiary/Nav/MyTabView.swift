@@ -12,20 +12,58 @@ import SwiftUI
 // MARK: - MyTabView
 struct MyTabView: View {
     
+    @AppStorage("heartColor") var appHeartColor:HeartColorType = .yellow
+    
     @Binding var selectTab:Tab
     @Binding var selectView:Tab
     
+    
     var body: some View {
+//        kakeTabBar
+        quantumultTabBar
+        
+    }
+    
+//    quantumultTabItems
+    var quantumultTabBar:some View{
+        HStack(spacing: 0){
+            
+            ForEach(quantumultTabItems){ item in
+                Button {
+                    withAnimation (.easeInOut(duration: 0.21)){
+                        selectTab = item.tab
+                    }
+                    selectView = item.tab
+                } label: {
+                    Image(systemName: item.icon)
+                        .font(.title2)
+                        .frame(width: 45,height: 45,alignment: .center)
+                        .foregroundColor(selectTab == item.tab ? appHeartColor.SwiftUiColor : .gray)
+                        .opacity(selectTab == item.tab ? 1 : 0.5)
+                        .symbolVariant(selectTab == item.tab ? .fill : .none)
+                        .padding(8)
+                }
+            }
+            
+        }
+        .background(.ultraThinMaterial)
+        .cornerRadius(20)
+        .shadow(radius: 20)
+        .padding()
+        .frame(maxHeight: .infinity,alignment: .bottom)
+        .ignoresSafeArea(.all)
+    }
+    
+    
+    var kakeTabBar:some View {
         HStack(spacing: 0){
             Spacer()
-            ForEach(tabItems){ item in
+            ForEach(kakeTabItems){ item in
                 Button (action: {
                     withAnimation (.easeInOut(duration: 0.21)){
                         selectTab = item.tab
                     }
                     selectView = item.tab
-                    
-//                    selectTab = item.tab
                 } , label: {
                     HStack(spacing:8){
                         Image(systemName: item.icon)
@@ -37,10 +75,8 @@ struct MyTabView: View {
                             Text(item.name)
                                 .font(.footnote)
                                 .lineLimit(1)
-//                                .frame(maxWidth:selectView == item.tab ? .infinity:.none )
                         }
                     }
-                    //                    .frame(maxWidth:.infinity,alignment:.leading)
                     .padding(.trailing,25)
                     .background(content: {
                         Capsule().fill(Color(selectTab == item.tab ? .gray : .systemBackground).opacity(0.3))
@@ -48,34 +84,20 @@ struct MyTabView: View {
                     })
                 })
                 .buttonStyle(BlankButtonStyle())
-                //button
-                //      .padding(.top,14)
-                //button在Hstack中位置
                 .frame(height: 68,alignment: .top)
                 .foregroundColor(selectTab==item.tab ? .primary : .secondary)
                 .buttonStyle(.plain)
                 Spacer()
-                
-            }
-            //ForEach
-            
+            }//ForEach
         }//HStack
-        //        .background {
-        //            GeometryReader { proxy in
-        ////                Text("\(proxy.size.width)")
-        //                a = proxy.size.width
-        //            }
-        //        }
-        //.frame(height: 50)
         .padding(.top,10)
         //背景板颜色
-        //.background(.ultraThinMaterial)
         .background(.background)
-        
         //放置最底下
         .frame(maxHeight: .infinity,alignment: .bottom)
         .ignoresSafeArea(.all)
     }
+    
 }
 
 

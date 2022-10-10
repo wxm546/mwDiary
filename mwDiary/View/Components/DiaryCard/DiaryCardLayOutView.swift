@@ -19,6 +19,7 @@ struct DiaryCardLayOutView: View {
     var e_body:String = "This is a preview window, tap to change the list layout ."
     var e_isFav:Bool = true
     var layoutIndex:Int = 2
+    var isFirstDiaryOfDay:Bool = true
     
     var body: some View {
         switch layoutIndex {
@@ -43,6 +44,7 @@ struct DiaryCardLayOutView: View {
     var cardView1 : some View {
         HStack(spacing:10){
             caleView1
+                .opacity(isFirstDiaryOfDay ? 1 : 0.01)
             textView1
         }
     }
@@ -65,7 +67,7 @@ struct DiaryCardLayOutView: View {
             .background (appTheme.backColor3)
             .overlay(
                 RoundedRectangle(cornerRadius: 11)
-                    .stroke(Color.primary,lineWidth: 3)
+                    .stroke(Color.black,lineWidth: 3)
             )
             .cornerRadius(10)
         }
@@ -386,6 +388,7 @@ struct DiaryCardLayOutView: View {
                     .lineLimit(4)
                     .padding(.bottom,3)
             }
+//            .background(appTheme.sysBack)
             .frame(maxWidth: .infinity,alignment: .leading)
             
            
@@ -393,7 +396,7 @@ struct DiaryCardLayOutView: View {
         .padding(.horizontal,10)
         
         //MARK: - 文字板background
-        .background(appTheme.backColor)
+        .background(appTheme.sysBack)
         .frame(maxWidth:.infinity , alignment: .leading)
     }
     

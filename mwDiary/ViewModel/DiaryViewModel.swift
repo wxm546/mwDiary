@@ -5,13 +5,13 @@
 //  Created by wxm on 2022/9/22.
 //
 //https://cloud.tencent.com/developer/ask/sof/926782
+
 import Foundation
 import CoreData
 import SwiftUI
 
 //MARK: - diaryViewModel
 class DiaryViewMode:ObservableObject{
-  
     
 //    let container: NSPersistentContainer
     private static var container: NSPersistentContainer = {
@@ -29,21 +29,22 @@ class DiaryViewMode:ObservableObject{
     }
     
     @Published var savedEntities: [DiaryEntity] = []
+    @Published var groupedEntities :  [String:[DiaryEntity]] = [:]
     
-    init(isTest:Bool = false) {
-        //        container = NSPersistentContainer(name: "mmDiary")
-        //        container.loadPersistentStores { (description, error) in
-        //            if let error = error {print("error loading core data.\(error)")}
-        
-//        self.persistentcon
-        //        }
+    init() {
         fetchDiary()
     }
     
     func fetchDiary() {
         let request = NSFetchRequest<DiaryEntity>(entityName: "DiaryEntity")
+        
         do {savedEntities = try context.fetch(request)
         } catch let error {print("error fetch.\(error)")}
+        
+        if savedEntities != [] {
+            groupedEntities = Dictionary(grouping: savedEntities, by: { dateFormatteryyyyMMdd.string(from: $0.create_date!) })}
+            
+ 
     }
     
     func saveData(){
@@ -60,7 +61,10 @@ class DiaryViewMode:ObservableObject{
         newDiary.create_date = Date()
         newDiary.modified_date = newDiary.create_date
         newDiary.is_fav = false
+        
         saveData()
+//        searchFirst()
+        
     }
     
     func updateDiary(titlestr:String,bodystr:String,entity:DiaryEntity?) {
@@ -70,6 +74,7 @@ class DiaryViewMode:ObservableObject{
         entity?.body = newBody
         entity?.modified_date = Date()
         saveData()
+//        searchFirst()
     }
     
     //    func submitDiary(titlestr:String,bodystr:String,entity:DiaryEntity){
@@ -85,6 +90,7 @@ class DiaryViewMode:ObservableObject{
         let currentIsfav = entity.is_fav
         entity.is_fav = !currentIsfav
         saveData()
+        
     }
     
     func deleteDiaryWithIndexSet(indexSet:IndexSet) {
@@ -92,12 +98,14 @@ class DiaryViewMode:ObservableObject{
         let entity = savedEntities[index]
         context.delete(entity)
         saveData()
+//        searchFirst()
     }
     
     func deleteDiaryWithEntity(entity:DiaryEntity) {
         let en = entity
         context.delete(en)
         saveData()
+//        searchFirst()
     }
     
     
@@ -133,7 +141,25 @@ class DiaryViewMode:ObservableObject{
         isShareSheetShowing.toggle()
         
     }
-
+    
+//    func searchFirst(diarys:[DiaryEntity]) {
+//        var con:DiaryEntity? = nil
+//        for i in diarys{
+//            if con == nil {
+//                i.is_first = true
+//                con = i
+//            } else {
+//                if dateFormatteryyyyMMdd.string(from: i.create_date!) == dateFormatteryyyyMMdd.string(from: con!.create_date!) {
+//                    i.is_first = false
+//                }else{
+//                    i.is_first = true
+//                }
+//                con = i
+//            }
+//        }
+//        con = nil
+//        saveData()
+//    }
     
 }
 

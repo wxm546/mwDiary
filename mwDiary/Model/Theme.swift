@@ -139,6 +139,20 @@ enum ThemeType:String{
             }
         }
     }
+    var sysBack:Color {
+        get {
+            switch self {
+            case .Automatic:
+                return Color("whiteblack")
+            case .Light:
+                return Color("whiteblack")
+            case .Dark:
+                return Color("whiteblack")
+            case .rainbow:
+                return Color("whiteblack")
+            }
+        }
+    }
 
     
 }

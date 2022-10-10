@@ -19,7 +19,6 @@ struct ContentView: View {
                 switch selectView{
                 case .diary:
                     DiaryView()
-                    
                 case .journals:
                     JournalView()
                 case .favs:

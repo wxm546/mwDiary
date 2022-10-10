@@ -81,7 +81,7 @@ struct AppearanceView: View {
                                 }
                                 .frame(height: 50)
                                 //用于点击
-                                
+                                .background(Color(.systemBackground).opacity(0.01))
                                 .onTapGesture {
                                     withAnimation(.easeOut) {
                                         appTheme = theme.theme
@@ -92,7 +92,6 @@ struct AppearanceView: View {
                     } header: {
                         Text("THEMES")
                     }
-                    //.listRowBackground(appTheme.backColor)
                     
                     //MARK: - change icon
                     Section{
@@ -114,11 +113,10 @@ struct AppearanceView: View {
                     } header: {
                         Text("APP ICON")
                     }
-                    //.listRowBackground(appTheme.backColor)
                     
                     //MARK: - change favcolor
                     Section{
-                        ScrollView(.horizontal){
+                        ScrollView(.horizontal,showsIndicators:false){
                             HStack(spacing:0){
                                 ForEach(heartColors){ item in
                                     Button {
@@ -145,12 +143,9 @@ struct AppearanceView: View {
                     } header: {
                         Text("Favourite Color")
                     }
-                    //                    .listRowBackground(appTheme.backColor)
-                    
                 }
                     
                 Group{
-                    
                     //MARK: - change LAYOUT
                     Section{
                         VStack(spacing:18){
@@ -164,7 +159,6 @@ struct AppearanceView: View {
                     } header: {
                         Text("LAYOUT")
                     }
-                    //                    .listRowBackground(appTheme.backColor)
                     
                     Section{
                         //TODO: - change font
@@ -178,9 +172,7 @@ struct AppearanceView: View {
                     } header: {
                         Text("MORE")
                     }
-                    //                    .listRowBackground(appTheme.backColor)
                     VStack{}.frame(height:45)
-                    //                        .listRowBackground(appTheme.backColor)
                 }
             }//list
             .listStyle(.plain)

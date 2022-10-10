@@ -25,12 +25,14 @@ struct DiaryView: View {
         if navTitle.isEmpty {
             return diaryvm.savedEntities
         } else {
-            return diaryvm.savedEntities.filter { dateFormatterMMMM.string(from: $0.create_date!) == navTitle }
+            let a = diaryvm.savedEntities.filter { dateFormatterMMMM.string(from: $0.create_date!) == navTitle }
+            return a.sorted { a, b in
+                return a.create_date! > b.create_date!
+            }
         }
     }
     
     
-
     var body: some View {
         ZStack{
             NavigationView{
@@ -43,16 +45,14 @@ struct DiaryView: View {
                                   isShowFavToastAlert: $isShowFavToastAlert,
                                   isShowDeleteToastAlert: $isShowDeleteToastAlert,
                                   filteredDiary: filteredDiary)
-//                    .frame(height: 2000)
-
                 }
-                    .navigationTitle(navTitle)
-                    //MARK: - 下拉编辑
-                    .refreshable {
-                        editTitle = ""
-                        editText = ""
-                        showEditView.toggle()
-                    }
+                .navigationTitle(navTitle)
+                //MARK: - 下拉编辑
+                .refreshable {
+                    editTitle = ""
+                    editText = ""
+                    showEditView.toggle()
+                }
             }//Nav
             .navigationViewStyle(StackNavigationViewStyle())
             

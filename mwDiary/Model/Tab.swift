@@ -23,11 +23,16 @@ enum Tab : String{
     case setting
 }
 
-var tabItems = [
+var kakeTabItems = [
     TabItem(name: "Diary", icon: "doc",tab: .diary),
     TabItem(name: "Journals", icon: "calendar",tab: .journals),
     TabItem(name: "Favs", icon: "heart",tab: .favs),
     TabItem(name: "Setting", icon: "ellipsis",tab: .setting)
 ]
 
-
+var quantumultTabItems = [
+    TabItem(name: "Diary", icon: "doc",tab: .diary),
+    TabItem(name: "Journals", icon: "calendar",tab: .journals),
+    TabItem(name: "Favs", icon: "heart",tab: .favs),
+    TabItem(name: "Setting", icon: "ellipsis",tab: .setting)
+]

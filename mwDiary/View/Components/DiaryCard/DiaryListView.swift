@@ -20,6 +20,12 @@ struct DiaryListView: View {
     @Binding var selectEntity:DiaryEntity?
     @Binding var isShowFavToastAlert:Bool
     @Binding var isShowDeleteToastAlert:Bool
+    var con:DiaryEntity? = nil
+    var isfirst:Bool? = nil
+    var isFirstList:[Bool] = {
+        return []
+    }()
+    
     @AppStorage("defaultTitle") var defaultTitle = "My daily mood"
     @AppStorage("defaultBody") var defaultBody = ""
     
@@ -27,21 +33,25 @@ struct DiaryListView: View {
     
     var filteredDiary : [DiaryEntity]
     
+    
+    
     var body: some View{
         List{
             ForEach(filteredDiary) { entity in
-                DiaryCardView(diary: entity)
-                //MARK: - 设置卡片边距
+                
+                
+                DiaryCardView(diary: entity,isFirstDiaryOfDay: true)
+                    //MARK: - 设置卡片边距
                     .padding(.vertical,10)
                     .padding(.horizontal,18)
-                //MARK: - 点击编辑
+                    //MARK: - 点击编辑
                     .onTapGesture {
                         showEditView = true
                         selectEntity = entity
                         editTitle = entity.title ?? ""
                         editText = entity.body ?? ""
                     }
-                //MARK: - 滑动菜单
+                    //MARK: - 滑动菜单
                     .swipeActions(edge: .trailing, allowsFullSwipe: false, content: {
                         //MARK: deleteButton
                         Button {
@@ -145,6 +155,7 @@ struct DiaryListView: View {
         
     }
 }
+
 
 
 
