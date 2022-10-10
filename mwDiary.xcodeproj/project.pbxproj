@@ -30,7 +30,6 @@
 		C453B0DD28E285230042B671 /* DiaryEditView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C453B0BD28E285220042B671 /* DiaryEditView.swift */; };
 		C453B0DF28E285230042B671 /* PreferenceKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = C453B0C028E285220042B671 /* PreferenceKey.swift */; };
 		C453B0E028E285230042B671 /* Tab.swift in Sources */ = {isa = PBXBuildFile; fileRef = C453B0C128E285220042B671 /* Tab.swift */; };
-		C453B0E128E285230042B671 /* MyDefaultValue.swift in Sources */ = {isa = PBXBuildFile; fileRef = C453B0C328E285230042B671 /* MyDefaultValue.swift */; };
 		C453B0E228E285230042B671 /* Color+.swift in Sources */ = {isa = PBXBuildFile; fileRef = C453B0C428E285230042B671 /* Color+.swift */; };
 		C453B0E328E285230042B671 /* MyFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = C453B0C528E285230042B671 /* MyFormatter.swift */; };
 		C453B0E428E285230042B671 /* UIPickerView+.swift in Sources */ = {isa = PBXBuildFile; fileRef = C453B0C628E285230042B671 /* UIPickerView+.swift */; };
@@ -81,7 +80,6 @@
 		C453B0BD28E285220042B671 /* DiaryEditView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DiaryEditView.swift; sourceTree = "<group>"; };
 		C453B0C028E285220042B671 /* PreferenceKey.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PreferenceKey.swift; sourceTree = "<group>"; };
 		C453B0C128E285220042B671 /* Tab.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Tab.swift; sourceTree = "<group>"; };
-		C453B0C328E285230042B671 /* MyDefaultValue.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyDefaultValue.swift; sourceTree = "<group>"; };
 		C453B0C428E285230042B671 /* Color+.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Color+.swift"; sourceTree = "<group>"; };
 		C453B0C528E285230042B671 /* MyFormatter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyFormatter.swift; sourceTree = "<group>"; };
 		C453B0C628E285230042B671 /* UIPickerView+.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIPickerView+.swift"; sourceTree = "<group>"; };
@@ -239,7 +237,6 @@
 				C453B0C428E285230042B671 /* Color+.swift */,
 				C453B0C628E285230042B671 /* UIPickerView+.swift */,
 				C453B0C528E285230042B671 /* MyFormatter.swift */,
-				C453B0C328E285230042B671 /* MyDefaultValue.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -385,7 +382,6 @@
 				C453B0E528E285230042B671 /* Date+.swift in Sources */,
 				C453B08128E284A50042B671 /* mwDiaryApp.swift in Sources */,
 				C453B0E928E285230042B671 /* AppearanceView.swift in Sources */,
-				C453B0E128E285230042B671 /* MyDefaultValue.swift in Sources */,
 				C453B0E728E285230042B671 /* MyTabView.swift in Sources */,
 				C40E0E4728E3FDBD00F33F21 /* HeartColor.swift in Sources */,
 				C453B0E628E285230042B671 /* DiaryViewModel.swift in Sources */,
